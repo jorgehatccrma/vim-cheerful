@@ -441,16 +441,17 @@ endfunction
 " # Theme Definition
 
 let s:ui               = {}
+let s:ui.base_bg       = {'bg': 'Black'}
 let s:ui.main_bg       = {'bg': 'Grey 950'}
 let s:ui.main_fg       = {'fg': 'Grey 200'}
 let s:ui.hlted         = {'bg': 'Grey 900', 'fg': 'White'}
 let s:ui.hlted_bg      = {'bg': 'Grey 900'}
-let s:ui.gutter        = {'bg': 'Black', 'fg': 'Grey 600'}
+let s:ui.gutter        = {'fg': 'Grey 600'}
 let s:ui.yellow_accent = {'fg': 'Yellow A700'}
 let s:ui.green_accent  = {'fg': 'Green 600'}
 let s:ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
-let s:ui.warn          = {'fg': 'Pink 500'}
-let s:ui.alert         = {'bg': 'Amber 700', 'fg': 'Grey 800'}
+let s:ui.alert         = {'bg': 'Yellow 500', 'fg': 'Grey 900'}
+let s:ui.warn          = {'bg': 'Amber 700', 'fg': 'Grey 800'}
 let s:ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
 

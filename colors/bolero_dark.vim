@@ -18,8 +18,6 @@
 " ## Description
 
 " Vim cheerful dark colorscheme
-
-" " Author: Jorge Herrera <jherreras@gmail.com>
 " " Maintainer: Jorge Herrera <jherreras@gmail.com>
 " " Notes:
 
@@ -77,9 +75,10 @@ let colors_name = "bolero_dark"
 call cheerful#HL("Normal",          g:bolero_dark.ui.main_bg)
 call cheerful#HL("Normal",          g:bolero_dark.ui.main_fg)
 call cheerful#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
+call cheerful#HL("LineNr",          g:bolero_dark.ui.base_bg)
 call cheerful#HL("LineNr",          g:bolero_dark.ui.gutter)
 call cheerful#HL("LineNr",          {'fg': g:bolero_dark.syntax.comment.fg})
-call cheerful#HL("EndOfBuffer",     g:bolero_dark.ui.hlted_bg)
+call cheerful#HL("EndOfBuffer",     g:bolero_dark.ui.base_bg)
 call cheerful#HL("CursorColumn",    g:bolero_dark.ui.hlted)
 call cheerful#HL("CursorLine",      g:bolero_dark.ui.hlted_bg)
 call cheerful#HL("CursorLine",      {'usenone': 1})
@@ -89,14 +88,16 @@ call cheerful#HL("Visual",          g:bolero_dark.ui.selection)
 call cheerful#HL("Visual",          {'fg': 'White', 'usenone': 1})
 
 " " Gutter
+call cheerful#HL("FoldColumn",      g:bolero_dark.ui.base_bg)
 call cheerful#HL("FoldColumn",      g:bolero_dark.ui.gutter)
 call cheerful#HL("Folded",          g:bolero_dark.ui.hlted)
+call cheerful#HL("SignColumn",      g:bolero_dark.ui.base_bg)
 call cheerful#HL("SignColumn",      g:bolero_dark.ui.gutter)
 
 " Splits
 " NeoVim has a reversed interpretation of BG and FG than vim
 call cheerful#HL("VertSplit",       g:bolero_dark.ui.green_accent)
-call cheerful#HL("VertSplit",       {'bg': 'Black'})
+call cheerful#HL("VertSplit",       g:bolero_dark.ui.base_bg)
 if has('nvim')
   call cheerful#HL("VertSplit",     {
         \'bg': g:bolero_dark.ui.green_accent.fg,
@@ -107,7 +108,8 @@ call cheerful#HL("VertSplit",       {'usenone': 1})
 
 " Window / Tabs
 call cheerful#HL("TabLine",         {'bg': 'Green 800', 'fg': 'Grey 200'})
-call cheerful#HL("TabLineFill",     {'bg': 'Black', 'fg': 'Grey 200', 'usenone': 1})
+call cheerful#HL("TabLineFill",     g:bolero_dark.ui.base_bg)
+call cheerful#HL("TabLineFill",     {'fg': 'Grey 200', 'usenone': 1})
 call cheerful#HL("TabLineSel",      g:bolero_dark.ui.selection)
 
 " " File Navigation / Searching
@@ -125,9 +127,10 @@ call cheerful#HL("WildMenu",        g:bolero_dark.ui.selection)
 call cheerful#HL("WildMenu",        {'usenone': 1})
 
 " keep `StatusLine` similar to VertSplit
+call cheerful#HL("StatusLine",      g:bolero_dark.ui.base_bg)
 call cheerful#HL("StatusLine",      g:bolero_dark.ui.green_accent)
-call cheerful#HL("StatusLine",      {'bg': 'Black', 'usenone': 1})
-call cheerful#HL("StatusLineNC",    g:bolero_dark.ui.selection)  " use to have cterm=NONE
+call cheerful#HL("StatusLine",      {'usenone': 1})
+call cheerful#HL("StatusLineNC",    g:bolero_dark.ui.selection)
 call cheerful#HL("StatusLineNC",    {'usenone': 1})
 
 call cheerful#HL("SpellBad",        g:bolero_dark.ui.warn)
@@ -254,8 +257,8 @@ hi   link      cssCommonAttr   PreProc
 " #### Buffer Line
 "
 " By default, vim-bufferline/vim-airline integration uses
-" let g:bufferline_active_highlight = 'StatusLineNC'
-" let g:bufferline_inactive_highlight = 'StatusLine'
+let g:bufferline_active_highlight = 'StatusLineNC'
+let g:bufferline_inactive_highlight = 'StatusLine'
 "
 " to highlight buffer labels in airline. I prefer to use my own custom ones:
 " let g:bufferline_active_highlight = 'ActiveBuffer'
@@ -293,6 +296,20 @@ hi link TagbarType Type
 
 
 
-" # Finally *** DON'T ADD ANYTHING AFTER THIS SECTION ***
-" let g:lightline.colorscheme = 'bolero'
-" call lightline#colorscheme()
+" # *** DON'T ADD ANYTHING AFTER THIS SECTION ***
+"
+" Update lightline automagically when sourcing this file
+if exists('g:loaded_lightline')
+
+  redir => s:path
+  " :h:h => two directories up from this file
+  silent echo expand('%:p:h:h')
+  redir END
+
+  let s:lightline_color_src = strpart(s:path, 1) . '/autoload/lightline/colorscheme/bolero.vim'
+  " echom s:lightline_color_src
+  exec "source " . s:lightline_color_src
+
+	let g:lightline.colorscheme = 'bolero'
+	call lightline#colorscheme()
+endif
