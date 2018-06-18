@@ -5,11 +5,9 @@ scriptencoding utf-8
 
 let s:ui = {}
 let s:ui.lightline = {}
-let s:ui.lightline.lt1 = {'fg': 'Blue 100', 'bg': 'Blue Grey 700'}
-" let s:ui.lightline.lt1 = {'fg': 'Blue Grey 50', 'bg': 'Cyan 900'}
-let s:ui.lightline.lt2 = {'fg': 'Cyan 100', 'bg': 'Blue Grey 900'}
+let s:ui.lightline.lt1 = g:bolero_dark.lightline.accent1
+let s:ui.lightline.lt2 = g:bolero_dark.lightline.accent2
 let s:ui.lightline.rt1 = g:bolero_dark.ui.warn
-" let s:ui.lightline.rt1 = {'fg': 'Pink 900', 'bg': 'Amber 300'}
 let s:ui.lightline.rt2 = deepcopy(s:ui.lightline.lt1)
 let s:ui.lightline.mid  = deepcopy(s:ui.lightline.lt2)
 let s:ui.lightline.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
@@ -20,10 +18,15 @@ let s:ui.lightline.error = g:bolero_dark.ui.error
 let s:ui.lightline.warn  = g:bolero_dark.ui.alert
 let s:ui.lightline.ok    = g:bolero_dark.ui.info
 
-let s:ui.lightline.insert = {'fg': 'Green 900', 'bg': 'Yellow 500'}
-let s:ui.lightline.visual = {'fg': 'Green 900', 'bg': 'Light Green 500'}
+let s:ui.lightline.insert = g:bolero_dark.ui.alert
+let s:ui.lightline.visual = g:bolero_dark.ui.info
+" let s:ui.lightline.select = g:bolero_dark.ui.error
 let s:ui.lightline.select = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
-let s:ui.lightline.replace = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
+let s:ui.lightline.replace = g:bolero_dark.ui.warn
+" let s:ui.lightline.insert = {'fg': 'Green 900', 'bg': 'Yellow 500'}
+" let s:ui.lightline.visual = {'fg': 'Green 900', 'bg': 'Light Green 500'}
+" let s:ui.lightline.select = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
+" let s:ui.lightline.replace = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
 
 
 " Generates highlighting list to be applied to a lightline element
@@ -74,7 +77,7 @@ let s:p.replace.left[0] = HLElem(s:ui.lightline.replace)
 let g:lightline#colorscheme#bolero#palette = s:p
 
 
-echom "Updating Bolero lightline theme"
+" echom "Updating Bolero lightline theme"
 
 " # *** DON'T ADD ANYTHING AFTER THIS SECTION ***
 "

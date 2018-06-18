@@ -414,7 +414,7 @@ endfunction
 
 
 function! cheerful#LightlineHL(element)
-  echo "Received:" . a:element
+  " echo "Received:" . a:element
 
   let l:guibg = '#000000'
   let l:guifg = '#FFFFFF'
@@ -438,6 +438,19 @@ function! cheerful#LightlineHL(element)
 
 endfunction
 
+
+" TODO: Add docstring
+function! cheerful#flip(color_def)
+  let l:out = {}
+  if has_key(a:color_def, 'fg')
+    let l:out.bg = a:color_def['fg']
+  endif
+  if has_key(a:color_def, 'bg')
+    let l:out.fg = a:color_def['bg']
+  endif
+  return l:out
+endfunction
+
 " # Theme Definition
 
 let s:ui               = {}
@@ -449,9 +462,10 @@ let s:ui.hlted_bg      = {'bg': 'Grey 900'}
 let s:ui.gutter        = {'fg': 'Grey 600'}
 let s:ui.yellow_accent = {'fg': 'Yellow A700'}
 let s:ui.green_accent  = {'fg': 'Green 600'}
+let s:ui.blue_accent   = {'fg': 'Light Blue 400'}
 let s:ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
 let s:ui.alert         = {'bg': 'Yellow 500', 'fg': 'Grey 900'}
-let s:ui.warn          = {'bg': 'Amber 700', 'fg': 'Grey 800'}
+let s:ui.warn          = {'bg': 'Purple A100', 'fg': 'Grey 900'}
 let s:ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
 
@@ -465,6 +479,11 @@ let s:syntax.type      = {'fg': 'Lime A700'}
 let s:syntax.special   = {'fg': 'Blue 500'}
 let s:syntax.statement = {'fg': 'Green 600'}
 
+let s:lightline        = {}
+let s:lightline.accent1 = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
+let s:lightline.accent2 = {'fg': 'Cyan 100', 'bg': 'Blue Grey 900'}
+
 let g:bolero_dark = {}
 let g:bolero_dark.ui = s:ui
 let g:bolero_dark.syntax = s:syntax
+let g:bolero_dark.lightline = s:lightline

@@ -74,7 +74,9 @@ let colors_name = "bolero_dark"
 
 call cheerful#HL("Normal",          g:bolero_dark.ui.main_bg)
 call cheerful#HL("Normal",          g:bolero_dark.ui.main_fg)
-call cheerful#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
+" Usually the terminal application highjacks the cursor, so no point in
+" customizing it
+" call cheerful#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
 call cheerful#HL("LineNr",          g:bolero_dark.ui.base_bg)
 call cheerful#HL("LineNr",          g:bolero_dark.ui.gutter)
 call cheerful#HL("LineNr",          {'fg': g:bolero_dark.syntax.comment.fg})
@@ -84,8 +86,7 @@ call cheerful#HL("CursorLine",      g:bolero_dark.ui.hlted_bg)
 call cheerful#HL("CursorLine",      {'usenone': 1})
 call cheerful#HL("CursorLineNr",    g:bolero_dark.ui.yellow_accent)
 call cheerful#HL("ColorColumn",     g:bolero_dark.ui.hlted_bg)
-call cheerful#HL("Visual",          g:bolero_dark.ui.selection)
-call cheerful#HL("Visual",          {'fg': 'White', 'usenone': 1})
+call cheerful#HL("Visual",          cheerful#flip(g:bolero_dark.ui.info))
 
 " " Gutter
 call cheerful#HL("FoldColumn",      g:bolero_dark.ui.base_bg)
@@ -99,28 +100,27 @@ call cheerful#HL("SignColumn",      g:bolero_dark.ui.gutter)
 call cheerful#HL("VertSplit",       g:bolero_dark.ui.green_accent)
 call cheerful#HL("VertSplit",       g:bolero_dark.ui.base_bg)
 if has('nvim')
-  call cheerful#HL("VertSplit",     {
-        \'bg': g:bolero_dark.ui.green_accent.fg,
-        \'fg': 'Black',
-        \})
+  call cheerful#HL("VertSplit",     cheerful#flip(g:bolero_dark.ui.green_accent))
+  call cheerful#HL("VertSplit",     cheerful#flip(g:bolero_dark.ui.base_bg))
 endif
 call cheerful#HL("VertSplit",       {'usenone': 1})
 
 " Window / Tabs
-call cheerful#HL("TabLine",         {'bg': 'Green 800', 'fg': 'Grey 200'})
-call cheerful#HL("TabLineFill",     g:bolero_dark.ui.base_bg)
-call cheerful#HL("TabLineFill",     {'fg': 'Grey 200', 'usenone': 1})
-call cheerful#HL("TabLineSel",      g:bolero_dark.ui.selection)
+" who needs Tabs anyway
+" call cheerful#HL("TabLine",         {'bg': 'Green 800', 'fg': 'Grey 200'})
+" call cheerful#HL("TabLineFill",     g:bolero_dark.ui.base_bg)
+" call cheerful#HL("TabLineFill",     g:bolero_dark.ui.main_fg)
+" call cheerful#HL("TabLineFill",     {'usenone': 1})
+" call cheerful#HL("TabLineSel",      g:bolero_dark.ui.selection)
 
 " " File Navigation / Searching
-call cheerful#HL("Search",          {'bg': 'Yellow 600', 'fg': 'Grey 900'})
-call cheerful#HL("IncSearch",       {'fg': 'Green 500', 'bg': 'Grey 200'})
-call cheerful#HL("Directory",       {'fg': 'Light Blue 400', 'usenone': 1})
+call cheerful#HL("Search",          g:bolero_dark.ui.alert)
+call cheerful#HL("IncSearch",       g:bolero_dark.ui.blue_accent)
+call cheerful#HL("Directory",       g:bolero_dark.ui.blue_accent)
 
 " " Autocomplete menu
-call cheerful#HL("Pmenu",           {'bg': 'Grey 500', 'fg': 'Black'})
-call cheerful#HL("PmenuSel",        g:bolero_dark.ui.green_accent)
-call cheerful#HL("PmenuSel",        {'bg': 'Green 800'})
+call cheerful#HL("Pmenu",           g:bolero_dark.lightline.accent2)
+call cheerful#HL("PmenuSel",        g:bolero_dark.lightline.accent1)
 
 " Wildmenu/bufferline
 call cheerful#HL("WildMenu",        g:bolero_dark.ui.selection)
@@ -136,6 +136,11 @@ call cheerful#HL("StatusLineNC",    {'usenone': 1})
 call cheerful#HL("SpellBad",        g:bolero_dark.ui.warn)
 call cheerful#HL("SpellCap",        g:bolero_dark.ui.alert)
 call cheerful#HL("MatchParen",      g:bolero_dark.ui.error)
+
+call cheerful#HL("Underlined",      g:bolero_dark.ui.yellow_accent)
+" cheerful#HL("Ignore", {})
+call cheerful#HL("Error",           g:bolero_dark.ui.error)
+call cheerful#HL("Todo",            cheerful#flip(g:bolero_dark.ui.blue_accent))
 
 
 " Special characters (the ones shown with `:set list`)
@@ -194,16 +199,6 @@ call cheerful#HL("Special", g:bolero_dark.syntax.special)
 " cheerful#HL("SpecialComment", {})
 " cheerful#HL("Debug", {})
 
-call cheerful#HL("Underlined", g:bolero_dark.ui.yellow_accent)
-
-" cheerful#HL("Ignore", {})
-
-"  palette red is too bright for background
-call cheerful#HL("Error", g:bolero_dark.ui.error)
-
-call cheerful#HL("Todo", {'bg': 'Light Blue 400', 'fg': 'Black'})
-
-
 " ### LANGUAGE SPECIFIC
 
 " #### Python
@@ -240,7 +235,7 @@ call cheerful#HL("helpHeadline", g:bolero_dark.ui.yellow_accent)
 
 hi   link      htmlH1          Special
 call cheerful#HL("mkdCode", g:bolero_dark.ui.yellow_accent)
-call cheerful#HL("mkdCode", {'bg': 'Grey 800'})
+call cheerful#HL("mkdCode", g:bolero_dark.ui.hlted_bg)
 
 " #### Javascript
 
