@@ -1,5 +1,7 @@
 " vim:foldmethod=expr:foldlevel=0:foldexpr=MDFold(v\:lnum):foldtext=FoldText()
 
+" # File Info
+"
 " Tips to navigate this file
 " -----------------------------------------------------------------------------
 
@@ -411,4 +413,57 @@ endfunction
 
 
 
+function! cheerful#LightlineHL(element)
+  echo "Received:" . a:element
 
+  let l:guibg = '#000000'
+  let l:guifg = '#FFFFFF'
+
+  let l:bg = 0
+  let l:fg = 15
+
+  if has_key(a:element, 'bg')
+    let l:color = g:cheerful#colormap['bg']
+    let l:guibg = l:color[0]
+    let l:bg = l:color[1]
+  endif
+
+  if has_key(a:element, 'fg')
+    let l:color = g:cheerful#colormap['fg']
+    let l:guifg = l:color[0]
+    let l:fg = l:color[1]
+  endif
+
+  return []
+
+endfunction
+
+" # Theme Definition
+
+let s:ui               = {}
+let s:ui.main_bg       = {'bg': 'Grey 950'}
+let s:ui.main_fg       = {'fg': 'Grey 200'}
+let s:ui.hlted         = {'bg': 'Grey 900', 'fg': 'White'}
+let s:ui.hlted_bg      = {'bg': 'Grey 900'}
+let s:ui.gutter        = {'bg': 'Black', 'fg': 'Grey 600'}
+let s:ui.yellow_accent = {'fg': 'Yellow A700'}
+let s:ui.green_accent  = {'fg': 'Green 600'}
+let s:ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
+let s:ui.warn          = {'fg': 'Pink 500'}
+let s:ui.alert         = {'bg': 'Amber 700', 'fg': 'Grey 800'}
+let s:ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
+let s:ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
+
+let s:syntax           = {}
+let s:syntax.string    = {'fg': 'Amber 700'}
+let s:syntax.comment   = {'fg': 'Blue Grey 500'}
+let s:syntax.constant  = {'fg': 'Pink 600'}
+let s:syntax.float     = {'fg': 'Blue 500'}
+let s:syntax.func_name = {'fg': 'Deep Orange A400'}
+let s:syntax.type      = {'fg': 'Lime A700'}
+let s:syntax.special   = {'fg': 'Blue 500'}
+let s:syntax.statement = {'fg': 'Green 600'}
+
+let g:bolero_dark = {}
+let g:bolero_dark.ui = s:ui
+let g:bolero_dark.syntax = s:syntax
