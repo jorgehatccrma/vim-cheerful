@@ -408,17 +408,6 @@ let s:dark_ui.warn          = {'bg': 'Purple A100', 'fg': 'Grey 900'}
 let s:dark_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:dark_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
 
-" This should also be considered part of the UI from a user point-of-view, but
-" since it realy configures the vim-lghtln plugin, we separate it
-let s:dark_lghtln          = {}
-let s:dark_lghtln.accent1  = {'fg': 'Cyan 50', 'bg': 'Blue Grey 700'}
-let s:dark_lghtln.accent2  = {'fg': 'Indigo 900', 'bg': 'Blue Grey 200'}
-let s:dark_lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
-let s:dark_lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
-let s:dark_lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
-let s:dark_lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
-let s:dark_lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
-
 " Syntax related highlighiting
 let s:dark_syntax           = {}
 let s:dark_syntax.string    = {'fg': 'Amber 700'}
@@ -451,17 +440,6 @@ let s:light_ui.warn          = {'bg': 'Purple A100', 'fg': 'Grey 900'}
 let s:light_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:light_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
 
-" This should also be considered part of the UI from a user point-of-view, but
-" since it realy configures the vim-lghtln plugin, we separate it
-let s:light_lghtln          = {}
-let s:light_lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
-let s:light_lghtln.accent2  = {'fg': 'Cyan 100', 'bg': 'Blue Grey 900'}
-let s:light_lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
-let s:light_lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
-let s:light_lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
-let s:light_lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
-let s:light_lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
-
 " Syntax related highlighiting
 let s:light_syntax           = {}
 let s:light_syntax.string    = {'fg': 'Indigo 300'}
@@ -473,16 +451,44 @@ let s:light_syntax.type      = {'fg': 'Blue 500'}
 let s:light_syntax.special   = {'fg': 'Purple 700'}
 let s:light_syntax.statement = {'fg': 'Green 400'}
 
+
+
+" # Lightline Theme
+
+" We'll use a single lightline theme for both dark and light versions of bolero
+" This should also be considered part of the UI from a user point-of-view, but
+" since it realy configures the vim-lghtln plugin, we separate it
+let s:lghtln          = {}
+let s:lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
+let s:lghtln.accent2  = {'fg': 'Blue 900', 'bg': 'Blue Grey 200'}
+let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
+let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
+let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
+let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
+let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
+
+" let s:lghtln          = {}
+" let s:lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
+" let s:lghtln.accent2  = {'fg': 'Cyan 100', 'bg': 'Blue Grey 900'}
+" let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
+" let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
+" let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
+" let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
+" let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
+
+
+
+
 " # Global interfaces
 
 " Gloabl dictionary to be accessed by anyone who cares
 let g:bolero_dark = {}
 let g:bolero_dark.ui = s:dark_ui
 let g:bolero_dark.syntax = s:dark_syntax
-let g:bolero_dark.lghtln = s:dark_lghtln
+let g:bolero_dark.lghtln = s:lghtln
 
 " Gloabl dictionary to be accessed by anyone who cares
 let g:bolero_light = {}
 let g:bolero_light.ui = s:light_ui
 let g:bolero_light.syntax = s:light_syntax
-let g:bolero_light.lghtln = s:light_lghtln
+let g:bolero_light.lghtln = s:lghtln
