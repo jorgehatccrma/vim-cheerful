@@ -79,7 +79,6 @@ call cheerful#HL("Normal",          g:bolero_dark.ui.main_fg)
 " call cheerful#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
 call cheerful#HL("LineNr",          g:bolero_dark.ui.base_bg)
 call cheerful#HL("LineNr",          g:bolero_dark.ui.gutter)
-call cheerful#HL("LineNr",          {'fg': g:bolero_dark.syntax.comment.fg})
 call cheerful#HL("EndOfBuffer",     g:bolero_dark.ui.base_bg)
 call cheerful#HL("CursorColumn",    g:bolero_dark.ui.hlted)
 call cheerful#HL("CursorLine",      g:bolero_dark.ui.hlted_bg)
@@ -119,8 +118,8 @@ call cheerful#HL("IncSearch",       g:bolero_dark.ui.blue_accent)
 call cheerful#HL("Directory",       g:bolero_dark.ui.blue_accent)
 
 " " Autocomplete menu
-call cheerful#HL("Pmenu",           g:bolero_dark.lightline.accent2)
-call cheerful#HL("PmenuSel",        g:bolero_dark.lightline.accent1)
+call cheerful#HL("Pmenu",           g:bolero_dark.lghtln.accent2)
+call cheerful#HL("PmenuSel",        g:bolero_dark.lghtln.accent1)
 
 " Wildmenu/bufferline
 call cheerful#HL("WildMenu",        g:bolero_dark.ui.selection)
