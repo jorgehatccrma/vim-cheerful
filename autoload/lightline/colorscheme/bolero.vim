@@ -1,16 +1,22 @@
 scriptencoding utf-8
 
+if g:colors_name == 'bolero_light'
+  let s:cmap = g:bolero_light
+else
+  let s:cmap = g:bolero_dark
+end
+
 
 " Define theme
 
 let s:ui = {}
 let s:ui.lightline = {}
-let s:ui.lightline.lt1 = g:bolero_dark.lghtln.accent1
-let s:ui.lightline.lt2 = g:bolero_dark.lghtln.accent2
-let s:ui.lightline.rt1 = cheerful#flip(g:bolero_dark.ui.warn)
+let s:ui.lightline.lt1 = s:cmap.lghtln.accent1
+let s:ui.lightline.lt2 = s:cmap.lghtln.accent2
+let s:ui.lightline.rt1 = cheerful#flip(s:cmap.ui.warn)
 let s:ui.lightline.rt2 = deepcopy(s:ui.lightline.lt1)
 let s:ui.lightline.mid  = deepcopy(s:ui.lightline.lt2)
-let s:ui.lightline.inactive = g:bolero_dark.lghtln.inactive
+let s:ui.lightline.inactive = s:cmap.lghtln.inactive
 
 " Generates highlighting list to be applied to a lightline element
 function! HLElem(elem, ...)
@@ -33,10 +39,10 @@ let s:p.normal.left = [HLElem(s:ui.lightline.lt1),HLElem(s:ui.lightline.lt2),]
 let s:p.normal.right = [HLElem(s:ui.lightline.rt1),HLElem(s:ui.lightline.rt2),]
 let s:p.normal.middle = [HLElem(s:ui.lightline.mid),]
 
-let s:p.normal.ALEchecking = [HLElem(g:bolero_dark.ui.warn),]
-let s:p.normal.ALEerror = [HLElem(g:bolero_dark.ui.error),]
-let s:p.normal.ALEwarning = [HLElem(g:bolero_dark.ui.alert),]
-let s:p.normal.ALEok = [HLElem(g:bolero_dark.ui.info),]
+let s:p.normal.ALEchecking = [HLElem(s:cmap.ui.warn),]
+let s:p.normal.ALEerror = [HLElem(s:cmap.ui.error),]
+let s:p.normal.ALEwarning = [HLElem(s:cmap.ui.alert),]
+let s:p.normal.ALEok = [HLElem(s:cmap.ui.info),]
 
 let s:p.insert = deepcopy(s:p.normal)
 let s:p.visual = deepcopy(s:p.normal)
@@ -49,10 +55,10 @@ let s:p.inactive.right = [HLElem(s:ui.lightline.inactive), HLElem(s:ui.lightline
 let s:p.inactive.middle = [HLElem(s:ui.lightline.inactive)]
 
 " Use different color in left most element for different modes
-let s:p.insert.left[0] = HLElem(g:bolero_dark.lghtln.insert)
-let s:p.visual.left[0] = HLElem(g:bolero_dark.lghtln.visual)
-let s:p.select.left[0] = HLElem(g:bolero_dark.lghtln.select)
-let s:p.replace.left[0] = HLElem(g:bolero_dark.lghtln.replace)
+let s:p.insert.left[0] = HLElem(s:cmap.lghtln.insert)
+let s:p.visual.left[0] = HLElem(s:cmap.lghtln.visual)
+let s:p.select.left[0] = HLElem(s:cmap.lghtln.select)
+let s:p.replace.left[0] = HLElem(s:cmap.lghtln.replace)
 
 " Finally, set the lightline palette
 let g:lightline#colorscheme#bolero#palette = s:p

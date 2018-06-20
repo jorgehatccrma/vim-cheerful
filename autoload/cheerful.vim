@@ -455,4 +455,4 @@ let g:bolero_light = {}
 let g:bolero_light.ui = deepcopy(s:light_ui)
 let g:bolero_light.syntax = deepcopy(s:light_syntax)
 let g:bolero_light.lghtln = deepcopy(s:lghtln)
-let g:bolero_light.lghtln.inactive = {'fg': 'Orange 200', 'bg': 'Light Green 50'}
+let g:bolero_light.lghtln.inactive = {'fg': 'Brow 300', 'bg': 'Brown 100'}

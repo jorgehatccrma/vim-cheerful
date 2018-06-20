@@ -42,33 +42,7 @@ let colors_name = "bolero_light"
 " https://www.materialui.co/colors
 
 
-" ## Theme defs
-
-"   0 -> Black
-"  15 -> White
-"  22 -> Green 900
-"  28 -> Green 800
-"  34 -> Green 500
-"  39 -> Light Blue 400
-"  67 -> Indigo 400
-"  70 -> Light Green 600
-" 105 -> Deep Purple 300
-" 124 -> Red A700
-" 148 -> Lime 700
-" 162 -> Pink 600
-" 163 -> Pink 600
-" 196 -> Red A700
-" 214 -> Amber 700
-" 220 -> Yellow A700
-" 233 -> Grey 900
-" 234 -> Blue Grey 900
-" 235 -> Blue Grey 800
-" 238 -> Grey 800
-" 244 -> Grey 600
-" 246 -> Grey 500
-" 255 -> Grey 200
-
-" ### UI
+" ## UI
 
 " Edit window
 
@@ -155,7 +129,7 @@ call cheerful#HL("nerdtreeFileExtensionLabel_sh", g:bolero_light.syntax.string)
 
 
 
-" ### SYNTAX
+" ## SYNTAX
 
 " Standard vim groups (see :help group-name)
 " Really, type :help group-name, you'll see the color scheme in action!)
@@ -199,9 +173,9 @@ call cheerful#HL("Special", g:bolero_light.syntax.special)
 " cheerful#HL("SpecialComment", {})
 " cheerful#HL("Debug", {})
 
-" ### LANGUAGE SPECIFIC
+" ## LANGUAGE SPECIFIC
 
-" #### Python
+" ### Python
 
 call cheerful#HL("pythonFunction", g:bolero_light.syntax.func_name)  " use to have cterm=NONE
 hi  link pythonInclude    Type
@@ -211,11 +185,9 @@ hi  link pythonBuiltin    PreProc
 hi  link pythonTodo       Todo
 
 
-" #### C/C++
+" ### C/C++
 
-" #### Vim
-
-" ToDo: These should be tied `g:bolero_light.ui` definitions
+" ### Vim
 
 " hi   link      vimHiCtermFgBg  Normal
 " hi   link      vimHiCterm      vimHiCtermFgBg
@@ -231,25 +203,25 @@ call cheerful#HL("helpHyperTextEntry", g:bolero_light.ui.green_accent)
 call cheerful#HL("helpHeadline", g:bolero_light.ui.yellow_accent)
 
 
-" #### Markdown
+" ### Markdown
 
 hi   link      htmlH1          Special
 call cheerful#HL("mkdCode", g:bolero_light.ui.yellow_accent)
 call cheerful#HL("mkdCode", g:bolero_light.ui.hlted_bg)
 
-" #### Javascript
+" ### Javascript
 
 hi   link      jsGlobalObjects PreProc
 
-" #### CSS
+" ### CSS
 
 hi   link      cssColor        Float
 hi   link      cssUIAttr       PreProc
 hi   link      cssCommonAttr   PreProc
 
-" ### Plugins
+" ## Plugins
 
-" #### Buffer Line
+" ### Buffer Line
 "
 " By default, vim-bufferline/vim-airline integration uses
 let g:bufferline_active_highlight = 'StatusLineNC'
@@ -269,7 +241,7 @@ let g:bufferline_inactive_highlight = 'StatusLine'
 " theme, allowing to change highlight depending on the mode
 
 
-" #### ALE Specific Ones
+" ### ALE Specific Ones
 
 " Try to keep these in sync with ALE's colortheme
 " (~/.vim/autoload/lightline/colorscheme/cheerfully_dark.vim)
@@ -283,7 +255,7 @@ call cheerful#HL("ALESignColumnWithoutErrors", g:bolero_light.ui.error)
 
 
 
-" #### TagBar Specific Ones
+" ### TagBar Specific Ones
 
 hi link TagbarScope pythonFunction
 hi link TagbarKind PreProc
