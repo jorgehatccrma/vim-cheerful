@@ -277,23 +277,23 @@ let s:MaterialCMap = {
 
 " # Default CMap definiton
 
-" let g:cheerful#colormap = s:Term256CMap
-let g:cheerful#colormap = s:MaterialCMap
+" let g:bolero#colormap = s:Term256CMap
+let g:bolero#colormap = s:MaterialCMap
 
 " Augment the default map with our own customizations
 
-let g:cheerful#colormap["Black"] = ["#000000", 16]
-let g:cheerful#colormap["White"] = ["#FFFFFF", 231]
-let g:cheerful#colormap["Dark Grey 50"] = ["#606060", 241]
-let g:cheerful#colormap["Dark Grey 100"] = ["#585858", 240]
-let g:cheerful#colormap["Dark Grey 200"] = ["#4e4e4e", 239]
-let g:cheerful#colormap["Dark Grey 300"] = ["#444444", 238]
-let g:cheerful#colormap["Dark Grey 400"] = ["#3a3a3a", 237]
-let g:cheerful#colormap["Dark Grey 500"] = ["#303030", 236]
-let g:cheerful#colormap["Dark Grey 600"] = ["#262626", 235]
-let g:cheerful#colormap["Dark Grey 700"] = ["#1c1c1c", 234]
-let g:cheerful#colormap["Dark Grey 800"] = ["#121212", 233]
-let g:cheerful#colormap["Dark Grey 900"] = ["#080808", 232]
+let g:bolero#colormap["Black"] = ["#000000", 16]
+let g:bolero#colormap["White"] = ["#FFFFFF", 231]
+let g:bolero#colormap["Dark Grey 50"] = ["#606060", 241]
+let g:bolero#colormap["Dark Grey 100"] = ["#585858", 240]
+let g:bolero#colormap["Dark Grey 200"] = ["#4e4e4e", 239]
+let g:bolero#colormap["Dark Grey 300"] = ["#444444", 238]
+let g:bolero#colormap["Dark Grey 400"] = ["#3a3a3a", 237]
+let g:bolero#colormap["Dark Grey 500"] = ["#303030", 236]
+let g:bolero#colormap["Dark Grey 600"] = ["#262626", 235]
+let g:bolero#colormap["Dark Grey 700"] = ["#1c1c1c", 234]
+let g:bolero#colormap["Dark Grey 800"] = ["#121212", 233]
+let g:bolero#colormap["Dark Grey 900"] = ["#080808", 232]
 
 
 " # Functions
@@ -303,7 +303,7 @@ let g:cheerful#colormap["Dark Grey 900"] = ["#080808", 232]
 
 " Utility to set a highlight group using cterm index-valued colors
 "
-" Uses g:cheerful#colormap to also set the gui versions.
+" Uses g:bolero#colormap to also set the gui versions.
 "
 " Args:
 "   group: highlight group name
@@ -315,14 +315,14 @@ let g:cheerful#colormap["Dark Grey 900"] = ["#080808", 232]
 " Notes:
 "   'hi' is shorthand for 'highlight'
 "   To check the meaning of the hi groups, :help 'hi'
-function! cheerful#HL(group, values)
+function! bolero#HL(group, values)
   let cmd = "hi " . a:group
   if has_key(a:values, 'fg')
-    let l:col = g:cheerful#colormap[a:values['fg']]
+    let l:col = g:bolero#colormap[a:values['fg']]
     let cmd .= " guifg=" . string(l:col[0]) . " ctermfg=" . string(l:col[1])
   endif
   if has_key(a:values, 'bg')
-    let l:col = g:cheerful#colormap[a:values['bg']]
+    let l:col = g:bolero#colormap[a:values['bg']]
     let cmd .= " guibg=" . string(l:col[0]) . " ctermbg=" . string(l:col[1])
   endif
   if has_key(a:values, 'usenone')
@@ -340,7 +340,7 @@ endfunction
 
 
 " TODO: Add docstring
-function! cheerful#flip(color_def)
+function! bolero#flip(color_def)
   let l:out = {}
   if has_key(a:color_def, 'fg')
     let l:out.bg = a:color_def['fg']
@@ -378,10 +378,10 @@ let s:dark_syntax.string    = {'fg': 'Amber 700'}
 let s:dark_syntax.comment   = {'fg': 'Blue Grey 500'}
 let s:dark_syntax.constant  = {'fg': 'Pink 600'}
 let s:dark_syntax.float     = {'fg': 'Blue 600'}
-let s:dark_syntax.func_name = {'fg': 'Red A400'}
+let s:dark_syntax.func_name = {'fg': 'Red 500'}
 let s:dark_syntax.type      = {'fg': 'Lime A700'}
 let s:dark_syntax.special   = {'fg': 'Light Blue 300'}
-let s:dark_syntax.statement = {'fg': 'Green A700'}
+let s:dark_syntax.statement = {'fg': 'Green 500'}
 
 
 " # Light Theme Definition

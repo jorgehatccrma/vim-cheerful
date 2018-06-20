@@ -13,15 +13,15 @@ let s:ui = {}
 let s:ui.lightline = {}
 let s:ui.lightline.lt1 = s:cmap.lghtln.accent1
 let s:ui.lightline.lt2 = s:cmap.lghtln.accent2
-let s:ui.lightline.rt1 = cheerful#flip(s:cmap.ui.warn)
+let s:ui.lightline.rt1 = bolero#flip(s:cmap.ui.warn)
 let s:ui.lightline.rt2 = deepcopy(s:ui.lightline.lt1)
 let s:ui.lightline.mid  = deepcopy(s:ui.lightline.lt2)
 let s:ui.lightline.inactive = s:cmap.lghtln.inactive
 
 " Generates highlighting list to be applied to a lightline element
 function! HLElem(elem, ...)
-  let fg = get(g:cheerful#colormap, get(a:elem, 'fg', 'White'), ['#FFFFFF', 15])
-  let bg = get(g:cheerful#colormap, get(a:elem, 'bg', 'Black'), ['#000000', 0])
+  let fg = get(g:bolero#colormap, get(a:elem, 'fg', 'White'), ['#FFFFFF', 15])
+  let bg = get(g:bolero#colormap, get(a:elem, 'bg', 'Black'), ['#000000', 0])
   return [fg[0], bg[0], fg[1], bg[1]] + a:000
 endfunction
 

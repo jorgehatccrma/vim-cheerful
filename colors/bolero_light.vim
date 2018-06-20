@@ -17,7 +17,7 @@
 
 " ## Description
 
-" Vim cheerful dark colorscheme
+" Vim bolero dark colorscheme
 " " Maintainer: Jorge Herrera <jherreras@gmail.com>
 " " Notes:
 
@@ -46,85 +46,85 @@ let colors_name = "bolero_light"
 
 " Edit window
 
-call cheerful#HL("Normal",          g:bolero_light.ui.main_bg)
-call cheerful#HL("Normal",          g:bolero_light.ui.main_fg)
+call bolero#HL("Normal",          g:bolero_light.ui.main_bg)
+call bolero#HL("Normal",          g:bolero_light.ui.main_fg)
 " Usually the terminal application highjacks the cursor, so no point in
 " customizing it
-" call cheerful#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
-call cheerful#HL("LineNr",          g:bolero_light.ui.base_bg)
-call cheerful#HL("LineNr",          g:bolero_light.ui.gutter)
-call cheerful#HL("EndOfBuffer",     g:bolero_light.ui.base_bg)
-call cheerful#HL("CursorColumn",    g:bolero_light.ui.hlted)
-call cheerful#HL("CursorLine",      g:bolero_light.ui.hlted_bg)
-call cheerful#HL("CursorLine",      {'usenone': 1})
-call cheerful#HL("CursorLineNr",    g:bolero_light.ui.yellow_accent)
-call cheerful#HL("ColorColumn",     g:bolero_light.ui.hlted_bg)
-call cheerful#HL("Visual",          g:bolero_light.lghtln.accent1)
+" call bolero#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
+call bolero#HL("LineNr",          g:bolero_light.ui.base_bg)
+call bolero#HL("LineNr",          g:bolero_light.ui.gutter)
+call bolero#HL("EndOfBuffer",     g:bolero_light.ui.base_bg)
+call bolero#HL("CursorColumn",    g:bolero_light.ui.hlted)
+call bolero#HL("CursorLine",      g:bolero_light.ui.hlted_bg)
+call bolero#HL("CursorLine",      {'usenone': 1})
+call bolero#HL("CursorLineNr",    g:bolero_light.ui.yellow_accent)
+call bolero#HL("ColorColumn",     g:bolero_light.ui.hlted_bg)
+call bolero#HL("Visual",          g:bolero_light.lghtln.accent2)
 
 " " Gutter
-call cheerful#HL("FoldColumn",      g:bolero_light.ui.base_bg)
-call cheerful#HL("FoldColumn",      g:bolero_light.ui.gutter)
-call cheerful#HL("Folded",          g:bolero_light.ui.hlted)
-call cheerful#HL("SignColumn",      g:bolero_light.ui.base_bg)
-call cheerful#HL("SignColumn",      g:bolero_light.ui.gutter)
+call bolero#HL("FoldColumn",      g:bolero_light.ui.base_bg)
+call bolero#HL("FoldColumn",      g:bolero_light.ui.gutter)
+call bolero#HL("Folded",          g:bolero_light.ui.hlted)
+call bolero#HL("SignColumn",      g:bolero_light.ui.base_bg)
+call bolero#HL("SignColumn",      g:bolero_light.ui.gutter)
 
 " Splits
 " NeoVim has a reversed interpretation of BG and FG than vim
-call cheerful#HL("VertSplit",       g:bolero_light.lghtln.accent2)
-call cheerful#HL("VertSplit",       g:bolero_light.ui.base_bg)
+call bolero#HL("VertSplit",       g:bolero_light.lghtln.accent2)
+call bolero#HL("VertSplit",       g:bolero_light.ui.base_bg)
 if has('nvim')
-call cheerful#HL("VertSplit",       cheerful#flip(g:bolero_light.lghtln.accent2))
-  call cheerful#HL("VertSplit",     cheerful#flip(g:bolero_light.ui.base_bg))
+call bolero#HL("VertSplit",       bolero#flip(g:bolero_light.lghtln.accent2))
+  call bolero#HL("VertSplit",     bolero#flip(g:bolero_light.ui.base_bg))
 endif
-call cheerful#HL("VertSplit",       {'usenone': 1})
+call bolero#HL("VertSplit",       {'usenone': 1})
 
 " Window / Tabs
 " who needs Tabs anyway
-" call cheerful#HL("TabLine",         {'bg': 'Green 800', 'fg': 'Grey 200'})
-" call cheerful#HL("TabLineFill",     g:bolero_light.ui.base_bg)
-" call cheerful#HL("TabLineFill",     g:bolero_light.ui.main_fg)
-" call cheerful#HL("TabLineFill",     {'usenone': 1})
-" call cheerful#HL("TabLineSel",      g:bolero_light.ui.selection)
+" call bolero#HL("TabLine",         {'bg': 'Green 800', 'fg': 'Grey 200'})
+" call bolero#HL("TabLineFill",     g:bolero_light.ui.base_bg)
+" call bolero#HL("TabLineFill",     g:bolero_light.ui.main_fg)
+" call bolero#HL("TabLineFill",     {'usenone': 1})
+" call bolero#HL("TabLineSel",      g:bolero_light.ui.selection)
 
 " " File Navigation / Searching
-call cheerful#HL("Search",          g:bolero_light.ui.alert)
-call cheerful#HL("IncSearch",       g:bolero_light.ui.blue_accent)
-call cheerful#HL("Directory",       g:bolero_light.ui.blue_accent)
+call bolero#HL("Search",          g:bolero_light.ui.alert)
+call bolero#HL("IncSearch",       g:bolero_light.ui.blue_accent)
+call bolero#HL("Directory",       g:bolero_light.ui.blue_accent)
 
 " " Autocomplete menu
-call cheerful#HL("Pmenu",           g:bolero_light.lghtln.accent2)
-call cheerful#HL("PmenuSel",        g:bolero_light.lghtln.accent1)
+call bolero#HL("Pmenu",           g:bolero_light.lghtln.accent2)
+call bolero#HL("PmenuSel",        g:bolero_light.lghtln.accent1)
 
 " Wildmenu/bufferline
-call cheerful#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
-call cheerful#HL("WildMenu",        {'usenone': 1})
+call bolero#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
+call bolero#HL("WildMenu",        {'usenone': 1})
 
 " keep `StatusLine` similar to VertSplit
 " Status Line inverted colors control bothe WildMenu (non-selected) and the
 " vert-split continuation in the bufferline (only visible when there's a v-split
-call cheerful#HL("StatusLine",      cheerful#flip(g:bolero_light.lghtln.accent1))
-call cheerful#HL("StatusLine",      {'usenone': 1})
-call cheerful#HL("StatusLineNC",    g:bolero_light.ui.selection)
-call cheerful#HL("StatusLineNC",    {'usenone': 1})
+call bolero#HL("StatusLine",      bolero#flip(g:bolero_light.lghtln.accent1))
+call bolero#HL("StatusLine",      {'usenone': 1})
+call bolero#HL("StatusLineNC",    g:bolero_light.ui.selection)
+call bolero#HL("StatusLineNC",    {'usenone': 1})
 
-call cheerful#HL("SpellBad",        g:bolero_light.ui.warn)
-call cheerful#HL("SpellCap",        g:bolero_light.ui.alert)
-call cheerful#HL("MatchParen",      g:bolero_light.ui.error)
+call bolero#HL("SpellBad",        g:bolero_light.ui.warn)
+call bolero#HL("SpellCap",        g:bolero_light.ui.alert)
+call bolero#HL("MatchParen",      g:bolero_light.ui.error)
 
-call cheerful#HL("Underlined",      g:bolero_light.ui.yellow_accent)
-" cheerful#HL("Ignore", {})
-call cheerful#HL("Error",           g:bolero_light.ui.error)
-call cheerful#HL("Todo",            cheerful#flip(g:bolero_light.ui.blue_accent))
+call bolero#HL("Underlined",      g:bolero_light.ui.yellow_accent)
+" bolero#HL("Ignore", {})
+call bolero#HL("Error",           g:bolero_light.ui.error)
+call bolero#HL("Todo",            bolero#flip(g:bolero_light.ui.blue_accent))
 
 
 " Special characters (the ones shown with `:set list`)
 " The "NonText" highlighting will be used for "eol", "extends" and
 " precedes".  "SpecialKey" for "nbsp", "tab" and "trail".
-call cheerful#HL("SpecialKey",      g:bolero_light.ui.warn)
-call cheerful#HL("NonText",         g:bolero_light.ui.warn)
+call bolero#HL("SpecialKey",      g:bolero_light.ui.warn)
+call bolero#HL("NonText",         g:bolero_light.ui.warn)
 
 " NERDTree customizations
-call cheerful#HL("nerdtreeFileExtensionLabel_sh", g:bolero_light.syntax.string)
+call bolero#HL("nerdtreeFileExtensionLabel_sh", g:bolero_light.syntax.string)
 
 
 
@@ -133,51 +133,51 @@ call cheerful#HL("nerdtreeFileExtensionLabel_sh", g:bolero_light.syntax.string)
 
 " Standard vim groups (see :help group-name)
 " Really, type :help group-name, you'll see the color scheme in action!)
-call cheerful#HL("Comment", g:bolero_light.syntax.comment)
+call bolero#HL("Comment", g:bolero_light.syntax.comment)
 
-call cheerful#HL("Constant", g:bolero_light.syntax.constant)
-call cheerful#HL("String", g:bolero_light.syntax.string)
-call cheerful#HL("Float", g:bolero_light.syntax.float)
+call bolero#HL("Constant", g:bolero_light.syntax.constant)
+call bolero#HL("String", g:bolero_light.syntax.string)
+call bolero#HL("Float", g:bolero_light.syntax.float)
 hi   link   Character       String
 hi   link   Number          Float
 hi   link   Boolean         Float
 
-call cheerful#HL("Identifier", g:bolero_light.syntax.func_name)
+call bolero#HL("Identifier", g:bolero_light.syntax.func_name)
 " hi   link         Function        Identifier
 
 
-call cheerful#HL("Statement", g:bolero_light.syntax.statement)
-" cheerful#HL("Conditional", {})
-" cheerful#HL("Repeat", {})
-" cheerful#HL("Label", {})
-" cheerful#HL("Operator", {})
-" cheerful#HL("Keyword", {})
-" cheerful#HL("Exception", {})
+call bolero#HL("Statement", g:bolero_light.syntax.statement)
+" bolero#HL("Conditional", {})
+" bolero#HL("Repeat", {})
+" bolero#HL("Label", {})
+" bolero#HL("Operator", {})
+" bolero#HL("Keyword", {})
+" bolero#HL("Exception", {})
 
-call cheerful#HL("PreProc", g:bolero_light.ui.yellow_accent)
-" cheerful#HL("PreProc", {})
-" cheerful#HL("Include", {})
-" cheerful#HL("Define", {})
-" cheerful#HL("Macro", {})
-" cheerful#HL("PreCondit", {})
+call bolero#HL("PreProc", g:bolero_light.ui.yellow_accent)
+" bolero#HL("PreProc", {})
+" bolero#HL("Include", {})
+" bolero#HL("Define", {})
+" bolero#HL("Macro", {})
+" bolero#HL("PreCondit", {})
 
-call cheerful#HL("Type", g:bolero_light.syntax.type)
-" cheerful#HL("StorageClass", {})
-" cheerful#HL("Structure", {})
-" cheerful#HL("Typedef", {})
+call bolero#HL("Type", g:bolero_light.syntax.type)
+" bolero#HL("StorageClass", {})
+" bolero#HL("Structure", {})
+" bolero#HL("Typedef", {})
 
-call cheerful#HL("Special", g:bolero_light.syntax.special)
-" cheerful#HL("SpecialChar", {})
-" cheerful#HL("Tag", {})
-" cheerful#HL("Delimiter", {})
-" cheerful#HL("SpecialComment", {})
-" cheerful#HL("Debug", {})
+call bolero#HL("Special", g:bolero_light.syntax.special)
+" bolero#HL("SpecialChar", {})
+" bolero#HL("Tag", {})
+" bolero#HL("Delimiter", {})
+" bolero#HL("SpecialComment", {})
+" bolero#HL("Debug", {})
 
 " ## LANGUAGE SPECIFIC
 
 " ### Python
 
-call cheerful#HL("pythonFunction", g:bolero_light.syntax.func_name)  " use to have cterm=NONE
+call bolero#HL("pythonFunction", g:bolero_light.syntax.func_name)  " use to have cterm=NONE
 hi  link pythonInclude    Type
 hi  link pythonStatement  Type
 hi  link pythonDecoratorName pythonDecorator
@@ -198,16 +198,16 @@ hi  link pythonTodo       Todo
 " hi   link      vimHiNmbr       Operator
 hi   link      vimVar      Type
 hi   link      vimParenSep Special
-call cheerful#HL("helpOption", g:bolero_light.ui.yellow_accent)
-call cheerful#HL("helpHyperTextEntry", g:bolero_light.ui.green_accent)
-call cheerful#HL("helpHeadline", g:bolero_light.ui.yellow_accent)
+call bolero#HL("helpOption", g:bolero_light.ui.yellow_accent)
+call bolero#HL("helpHyperTextEntry", g:bolero_light.ui.green_accent)
+call bolero#HL("helpHeadline", g:bolero_light.ui.yellow_accent)
 
 
 " ### Markdown
 
 hi   link      htmlH1          Special
-call cheerful#HL("mkdCode", g:bolero_light.ui.yellow_accent)
-call cheerful#HL("mkdCode", g:bolero_light.ui.hlted_bg)
+call bolero#HL("mkdCode", g:bolero_light.ui.yellow_accent)
+call bolero#HL("mkdCode", g:bolero_light.ui.hlted_bg)
 
 " ### Javascript
 
@@ -232,10 +232,10 @@ let g:bufferline_inactive_highlight = 'StatusLine'
 " let g:bufferline_inactive_highlight = 'InactiveBuffer'
 "
 " Here I define their highlight colors
-" call cheerful#HL("ActiveBuffer", g:bolero_light.ui.green_accent)
-" call cheerful#HL("ActiveBuffer", {'bg': 'Grey 800', 'fg': 'White', 'usenone': 1})
-" call cheerful#HL("InactiveBuffer", g:bolero_light.ui.yellow_accent)
-" call cheerful#HL("InactiveBuffer", {'bg': 'Grey 800', 'fg': 'Grey 500', 'usenone': 1})
+" call bolero#HL("ActiveBuffer", g:bolero_light.ui.green_accent)
+" call bolero#HL("ActiveBuffer", {'bg': 'Grey 800', 'fg': 'White', 'usenone': 1})
+" call bolero#HL("InactiveBuffer", g:bolero_light.ui.yellow_accent)
+" call bolero#HL("InactiveBuffer", {'bg': 'Grey 800', 'fg': 'Grey 500', 'usenone': 1})
 
 " NOTE: these bufferline highlight groups can be overriden in the airline
 " theme, allowing to change highlight depending on the mode
@@ -244,14 +244,13 @@ let g:bufferline_inactive_highlight = 'StatusLine'
 " ### ALE Specific Ones
 
 " Try to keep these in sync with ALE's colortheme
-" (~/.vim/autoload/lightline/colorscheme/cheerfully_dark.vim)
-call cheerful#HL("ALEErrorSign",               g:bolero_light.ui.error)
-call cheerful#HL("ALEStyleErrorSign",          g:bolero_light.ui.error)
-call cheerful#HL("ALEWarningSign",             g:bolero_light.ui.alert)
-call cheerful#HL("ALEStyleWarningSign",        g:bolero_light.ui.alert)
-call cheerful#HL("ALEInfoSign",                g:bolero_light.ui.info)
-call cheerful#HL("ALESignColumnWithErrors",    g:bolero_light.ui.error)
-call cheerful#HL("ALESignColumnWithoutErrors", g:bolero_light.ui.error)
+call bolero#HL("ALEErrorSign",               g:bolero_light.ui.error)
+call bolero#HL("ALEStyleErrorSign",          g:bolero_light.ui.error)
+call bolero#HL("ALEWarningSign",             g:bolero_light.ui.alert)
+call bolero#HL("ALEStyleWarningSign",        g:bolero_light.ui.alert)
+call bolero#HL("ALEInfoSign",                g:bolero_light.ui.info)
+call bolero#HL("ALESignColumnWithErrors",    g:bolero_light.ui.error)
+call bolero#HL("ALESignColumnWithoutErrors", g:bolero_light.ui.error)
 
 
 
