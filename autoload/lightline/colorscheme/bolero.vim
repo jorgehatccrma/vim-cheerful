@@ -7,7 +7,7 @@ let s:ui = {}
 let s:ui.lightline = {}
 let s:ui.lightline.lt1 = g:bolero_dark.lghtln.accent1
 let s:ui.lightline.lt2 = g:bolero_dark.lghtln.accent2
-let s:ui.lightline.rt1 = g:bolero_dark.ui.warn
+let s:ui.lightline.rt1 = cheerful#flip(g:bolero_dark.ui.warn)
 let s:ui.lightline.rt2 = deepcopy(s:ui.lightline.lt1)
 let s:ui.lightline.mid  = deepcopy(s:ui.lightline.lt2)
 let s:ui.lightline.inactive = g:bolero_dark.lghtln.inactive
@@ -16,9 +16,7 @@ let s:ui.lightline.inactive = g:bolero_dark.lghtln.inactive
 function! HLElem(elem, ...)
   let fg = get(g:cheerful#colormap, get(a:elem, 'fg', 'White'), ['#FFFFFF', 15])
   let bg = get(g:cheerful#colormap, get(a:elem, 'bg', 'Black'), ['#000000', 0])
-  let l:color = [fg[0], bg[0], fg[1], bg[1]] + a:000
-  " echo l:color
-  return l:color
+  return [fg[0], bg[0], fg[1], bg[1]] + a:000
 endfunction
 
 

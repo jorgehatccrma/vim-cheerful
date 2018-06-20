@@ -85,7 +85,7 @@ call cheerful#HL("CursorLine",      g:bolero_light.ui.hlted_bg)
 call cheerful#HL("CursorLine",      {'usenone': 1})
 call cheerful#HL("CursorLineNr",    g:bolero_light.ui.yellow_accent)
 call cheerful#HL("ColorColumn",     g:bolero_light.ui.hlted_bg)
-call cheerful#HL("Visual",          cheerful#flip(g:bolero_light.ui.info))
+call cheerful#HL("Visual",          g:bolero_light.lghtln.accent1)
 
 " " Gutter
 call cheerful#HL("FoldColumn",      g:bolero_light.ui.base_bg)
@@ -96,10 +96,10 @@ call cheerful#HL("SignColumn",      g:bolero_light.ui.gutter)
 
 " Splits
 " NeoVim has a reversed interpretation of BG and FG than vim
-call cheerful#HL("VertSplit",       g:bolero_light.ui.green_accent)
+call cheerful#HL("VertSplit",       g:bolero_light.lghtln.accent2)
 call cheerful#HL("VertSplit",       g:bolero_light.ui.base_bg)
 if has('nvim')
-  call cheerful#HL("VertSplit",     cheerful#flip(g:bolero_light.ui.green_accent))
+call cheerful#HL("VertSplit",       cheerful#flip(g:bolero_light.lghtln.accent2))
   call cheerful#HL("VertSplit",     cheerful#flip(g:bolero_light.ui.base_bg))
 endif
 call cheerful#HL("VertSplit",       {'usenone': 1})
@@ -122,12 +122,13 @@ call cheerful#HL("Pmenu",           g:bolero_light.lghtln.accent2)
 call cheerful#HL("PmenuSel",        g:bolero_light.lghtln.accent1)
 
 " Wildmenu/bufferline
-call cheerful#HL("WildMenu",        g:bolero_light.ui.selection)
+call cheerful#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
 call cheerful#HL("WildMenu",        {'usenone': 1})
 
 " keep `StatusLine` similar to VertSplit
-call cheerful#HL("StatusLine",      g:bolero_light.ui.base_bg)
-call cheerful#HL("StatusLine",      g:bolero_light.ui.green_accent)
+" Status Line inverted colors control bothe WildMenu (non-selected) and the
+" vert-split continuation in the bufferline (only visible when there's a v-split
+call cheerful#HL("StatusLine",      cheerful#flip(g:bolero_light.lghtln.accent1))
 call cheerful#HL("StatusLine",      {'usenone': 1})
 call cheerful#HL("StatusLineNC",    g:bolero_light.ui.selection)
 call cheerful#HL("StatusLineNC",    {'usenone': 1})

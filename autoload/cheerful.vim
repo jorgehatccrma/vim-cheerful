@@ -316,63 +316,26 @@ let g:cheerful#colormap["Dark Grey 900"] = ["#080808", 232]
 "   'hi' is shorthand for 'highlight'
 "   To check the meaning of the hi groups, :help 'hi'
 function! cheerful#HL(group, values)
-
   let cmd = "hi " . a:group
-
   if has_key(a:values, 'fg')
-    let l:color = g:cheerful#colormap[a:values['fg']]
-    let cmd .= " guifg=" . string(l:color[0])
-    let cmd .= " ctermfg=" . string(l:color[1])
+    let l:col = g:cheerful#colormap[a:values['fg']]
+    let cmd .= " guifg=" . string(l:col[0]) . " ctermfg=" . string(l:col[1])
   endif
-
   if has_key(a:values, 'bg')
-    let l:color = g:cheerful#colormap[a:values['bg']]
-    let cmd .= " guibg=" . string(l:color[0])
-    let cmd .= " ctermbg=" . string(l:color[1])
+    let l:col = g:cheerful#colormap[a:values['bg']]
+    let cmd .= " guibg=" . string(l:col[0]) . " ctermbg=" . string(l:col[1])
   endif
-
   if has_key(a:values, 'usenone')
     let cmd .= " cterm=NONE"
   endif
-
   " override if there is gui definitions
   if has_key(a:values, 'guifg')
     let cmd .= " guifg=" . a:values['guifg']
   endif
-
   if has_key(a:values, 'guibg')
     let cmd .= " guibg=" . a:values['guibg']
   endif
-
   execute(cmd)
-
-endfunction
-
-
-
-function! cheerful#lghtlnHL(element)
-  " echo "Received:" . a:element
-
-  let l:guibg = '#000000'
-  let l:guifg = '#FFFFFF'
-
-  let l:bg = 0
-  let l:fg = 15
-
-  if has_key(a:element, 'bg')
-    let l:color = g:cheerful#colormap['bg']
-    let l:guibg = l:color[0]
-    let l:bg = l:color[1]
-  endif
-
-  if has_key(a:element, 'fg')
-    let l:color = g:cheerful#colormap['fg']
-    let l:guifg = l:color[0]
-    let l:fg = l:color[1]
-  endif
-
-  return []
-
 endfunction
 
 
@@ -387,6 +350,7 @@ function! cheerful#flip(color_def)
   endif
   return l:out
 endfunction
+
 
 " # Dark Theme Definition
 
@@ -404,7 +368,7 @@ let s:dark_ui.green_accent  = {'fg': 'Green 600'}
 let s:dark_ui.blue_accent   = {'fg': 'Light Blue 400'}
 let s:dark_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
 let s:dark_ui.alert         = {'bg': 'Yellow 500', 'fg': 'Grey 900'}
-let s:dark_ui.warn          = {'bg': 'Purple A100', 'fg': 'Grey 900'}
+let s:dark_ui.warn          = {'bg': 'Dark Grey 900', 'fg': 'Pink A100'}
 let s:dark_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:dark_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
 
@@ -413,11 +377,11 @@ let s:dark_syntax           = {}
 let s:dark_syntax.string    = {'fg': 'Amber 700'}
 let s:dark_syntax.comment   = {'fg': 'Blue Grey 500'}
 let s:dark_syntax.constant  = {'fg': 'Pink 600'}
-let s:dark_syntax.float     = {'fg': 'Blue 500'}
-let s:dark_syntax.func_name = {'fg': 'Deep Orange A400'}
+let s:dark_syntax.float     = {'fg': 'Blue 600'}
+let s:dark_syntax.func_name = {'fg': 'Red A400'}
 let s:dark_syntax.type      = {'fg': 'Lime A700'}
-let s:dark_syntax.special   = {'fg': 'Blue 500'}
-let s:dark_syntax.statement = {'fg': 'Green 600'}
+let s:dark_syntax.special   = {'fg': 'Light Blue 300'}
+let s:dark_syntax.statement = {'fg': 'Green A700'}
 
 
 " # Light Theme Definition
@@ -460,7 +424,7 @@ let s:light_syntax.statement = {'fg': 'Green 400'}
 " since it realy configures the vim-lghtln plugin, we separate it
 let s:lghtln          = {}
 let s:lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
-let s:lghtln.accent2  = {'fg': 'Blue 900', 'bg': 'Blue Grey 200'}
+let s:lghtln.accent2  = {'fg': 'Blue Grey 900', 'bg': 'Blue Grey 200'}
 let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
 let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
 let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
@@ -478,7 +442,6 @@ let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
 
 
 
-
 " # Global interfaces
 
 " Gloabl dictionary to be accessed by anyone who cares
@@ -489,6 +452,7 @@ let g:bolero_dark.lghtln = s:lghtln
 
 " Gloabl dictionary to be accessed by anyone who cares
 let g:bolero_light = {}
-let g:bolero_light.ui = s:light_ui
-let g:bolero_light.syntax = s:light_syntax
-let g:bolero_light.lghtln = s:lghtln
+let g:bolero_light.ui = deepcopy(s:light_ui)
+let g:bolero_light.syntax = deepcopy(s:light_syntax)
+let g:bolero_light.lghtln = deepcopy(s:lghtln)
+let g:bolero_light.lghtln.inactive = {'fg': 'Orange 200', 'bg': 'Light Green 50'}
