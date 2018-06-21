@@ -277,11 +277,9 @@ let s:MaterialCMap = {
 
 " # Default CMap definiton
 
-" let g:bolero#colormap = s:Term256CMap
 let g:bolero#colormap = s:MaterialCMap
 
 " Augment the default map with our own customizations
-
 let g:bolero#colormap["Black"] = ["#000000", 16]
 let g:bolero#colormap["White"] = ["#FFFFFF", 231]
 let g:bolero#colormap["Dark Grey 50"] = ["#606060", 241]
@@ -431,17 +429,6 @@ let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
 let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
 let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
 
-" let s:lghtln          = {}
-" let s:lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
-" let s:lghtln.accent2  = {'fg': 'Cyan 100', 'bg': 'Blue Grey 900'}
-" let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
-" let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
-" let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
-" let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
-" let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
-
-
-
 " # Global interfaces
 
 " Gloabl dictionary to be accessed by anyone who cares
@@ -455,4 +442,5 @@ let g:bolero_light = {}
 let g:bolero_light.ui = deepcopy(s:light_ui)
 let g:bolero_light.syntax = deepcopy(s:light_syntax)
 let g:bolero_light.lghtln = deepcopy(s:lghtln)
+" lightline overrides for light theme
 let g:bolero_light.lghtln.inactive = {'fg': 'Brow 300', 'bg': 'Brown 100'}
