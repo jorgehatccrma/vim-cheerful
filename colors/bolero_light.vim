@@ -267,14 +267,8 @@ hi link TagbarType Type
 " Update lightline automagically when sourcing this file
 if exists('g:loaded_lightline')
 
-  redir => s:path
-  " :h:h => two directories up from this file
-  silent echo expand('%:p:h:h')
-  redir END
-
-  let s:lightline_color_src = strpart(s:path, 1) . '/autoload/lightline/colorscheme/bolero.vim'
-  " echom s:lightline_color_src
-  exec "source " . s:lightline_color_src
+  let path = expand('%:p:h:h')
+  exec 'source' . path . '/autoload/lightline/colorscheme/bolero.vim'
 
 	let g:lightline.colorscheme = 'bolero'
 	call lightline#colorscheme()

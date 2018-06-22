@@ -337,7 +337,11 @@ function! bolero#HL(group, values)
 endfunction
 
 
-" TODO: Add docstring
+" Utility to "flip" a color def dictionary. The foreground becomes background
+" and vice-versa, only if they exists. For example:
+"
+" {'fg': '#ff0000'} ==> {'bg': '#FF0000'}
+" {'fg': '#ff0000', 'bg': '#CCCCCC'} ==> {'bg': '#FF0000', 'fg': '#CCCCCC'}
 function! bolero#flip(color_def)
   let l:out = {}
   if has_key(a:color_def, 'fg')
@@ -349,6 +353,25 @@ function! bolero#flip(color_def)
   return l:out
 endfunction
 
+
+" Toggle between both versions of bolero theme (dark and light)
+function! bolero#toggle()
+  if g:colors_name ==# 'bolero_dark'
+    " if exists('g:airline_theme')
+    "   let g:airline_theme = 'bolero_light'
+    " endif
+    colorscheme bolero_light
+    echom "Toggled bolero theme"
+  elseif g:colors_name ==# 'bolero_light'
+    " if exists('g:airline_theme')
+    "   let g:airline_theme = 'bolero_dark'
+    " endif
+    colorscheme bolero_dark
+    echom "Toggled bolero theme"
+  else
+    echom "You are not using bolero right now, so won't toogle"
+  endif
+endfunction
 
 " # Dark Theme Definition
 
@@ -421,13 +444,22 @@ let s:light_syntax.statement = {'fg': 'Green 400'}
 " This should also be considered part of the UI from a user point-of-view, but
 " since it realy configures the vim-lghtln plugin, we separate it
 let s:lghtln          = {}
-let s:lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
-let s:lghtln.accent2  = {'fg': 'Blue Grey 900', 'bg': 'Blue Grey 200'}
+let s:lghtln.accent1  = {'fg': 'Teal 50', 'bg': 'Teal 700'}
+let s:lghtln.accent2  = {'fg': 'Teal 900', 'bg': 'Teal 100'}
 let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
 let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
 let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
 let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
 let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
+
+" let s:lghtln          = {}
+" let s:lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
+" let s:lghtln.accent2  = {'fg': 'Blue Grey 900', 'bg': 'Blue Grey 200'}
+" let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
+" let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
+" let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
+" let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
+" let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
 
 " # Global interfaces
 
