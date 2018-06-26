@@ -389,7 +389,7 @@ let s:dark_ui.green_accent  = {'fg': 'Green 600'}
 let s:dark_ui.blue_accent   = {'fg': 'Light Blue 400'}
 let s:dark_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
 let s:dark_ui.alert         = {'bg': 'Yellow 500', 'fg': 'Grey 900'}
-let s:dark_ui.warn          = {'bg': 'Dark Grey 900', 'fg': 'Pink A100'}
+let s:dark_ui.warn          = {'bg': 'Dark Grey 900', 'fg': 'Pink A400'}
 let s:dark_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:dark_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
 
@@ -443,23 +443,27 @@ let s:light_syntax.statement = {'fg': 'Green 400'}
 " We'll use a single lightline theme for both dark and light versions of bolero
 " This should also be considered part of the UI from a user point-of-view, but
 " since it realy configures the vim-lghtln plugin, we separate it
+
 let s:lghtln          = {}
-let s:lghtln.accent1  = {'fg': 'Teal 50', 'bg': 'Teal 700'}
-let s:lghtln.accent2  = {'fg': 'Teal 900', 'bg': 'Teal 100'}
+
+" Brown version
+let s:lghtln.accent1  = {'fg': 'Brown 50', 'bg': 'Brown 900'}
+let s:lghtln.accent2  = {'fg': 'Brown 900', 'bg': 'Brown 100'}
+
+" " Indigo version
+" let s:lghtln.accent1  = {'fg': 'Indigo 50', 'bg': 'Indigo 900'}
+" let s:lghtln.accent2  = {'fg': 'Indigo 900', 'bg': 'Indigo 100'}
+
+" " Teal version
+" let s:lghtln.accent1  = {'fg': 'Teal 50', 'bg': 'Teal 900'}
+" let s:lghtln.accent2  = {'fg': 'Teal 900', 'bg': 'Teal 100'}
+
+" Common to all versions
 let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
 let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
 let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
 let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
 let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
-
-" let s:lghtln          = {}
-" let s:lghtln.accent1  = {'fg': 'Blue 50', 'bg': 'Blue Grey 700'}
-" let s:lghtln.accent2  = {'fg': 'Blue Grey 900', 'bg': 'Blue Grey 200'}
-" let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
-" let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
-" let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
-" let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
-" let s:lghtln.replace  = {'fg': 'Blue Grey 700', 'bg': 'Amber 500'}
 
 " # Global interfaces
 
