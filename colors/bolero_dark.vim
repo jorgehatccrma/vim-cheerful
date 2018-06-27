@@ -273,3 +273,11 @@ if exists('g:loaded_lightline')
 	let g:lightline.colorscheme = 'bolero'
 	call lightline#colorscheme()
 endif
+
+" Update tmux automagically when sourcing this file
+if exists('g:bolero#maincolor')
+
+  let path = expand('%:p:h:h')
+  exec 'source' . path . '/bolero/tmux.vim'
+
+endif

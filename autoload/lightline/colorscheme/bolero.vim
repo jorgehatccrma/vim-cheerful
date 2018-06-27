@@ -73,3 +73,4 @@ if exists('g:loaded_lightline')
   let g:lightline.colorscheme = 'bolero'
   call lightline#colorscheme()
 endif
+

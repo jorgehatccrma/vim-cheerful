@@ -373,6 +373,11 @@ function! bolero#toggle()
   endif
 endfunction
 
+" Apply tmux theme
+function! bolero#TmuxConf()
+  runtime 'bolero/tmux.vim'
+endfunction
+
 " # Dark Theme Definition
 
 " Vim native UI colors (UI is basically what's left after removing
@@ -444,19 +449,19 @@ let s:light_syntax.statement = {'fg': 'Green 400'}
 " This should also be considered part of the UI from a user point-of-view, but
 " since it realy configures the vim-lghtln plugin, we separate it
 
+if !exists("g:bolero#maincolor")
+    let g:bolero#maincolor = "Brown"
+endif
+
 let s:lghtln          = {}
-
-" Brown version
-let s:lghtln.accent1  = {'fg': 'Brown 50', 'bg': 'Brown 900'}
-let s:lghtln.accent2  = {'fg': 'Brown 900', 'bg': 'Brown 100'}
-
-" " Indigo version
-" let s:lghtln.accent1  = {'fg': 'Indigo 50', 'bg': 'Indigo 900'}
-" let s:lghtln.accent2  = {'fg': 'Indigo 900', 'bg': 'Indigo 100'}
-
-" " Teal version
-" let s:lghtln.accent1  = {'fg': 'Teal 50', 'bg': 'Teal 900'}
-" let s:lghtln.accent2  = {'fg': 'Teal 900', 'bg': 'Teal 100'}
+let s:lghtln.accent1  = {
+      \'fg': g:bolero#maincolor . ' 100',
+      \'bg': g:bolero#maincolor . ' 900',
+      \}
+let s:lghtln.accent2  = {
+      \'fg': g:bolero#maincolor . ' 900',
+      \'bg': g:bolero#maincolor . ' 100',
+      \}
 
 " Common to all versions
 let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
