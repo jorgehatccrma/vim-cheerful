@@ -378,6 +378,14 @@ function! bolero#TmuxConf()
   runtime 'bolero/tmux.vim'
 endfunction
 
+
+" " Run the whole enchilada
+" function! bolero#update(basecolor)
+"   let g:bolero#maincolor = a:basecolor
+"   exec 'colorscheme ' . g:colors_name
+" endfunction
+
+
 " # Dark Theme Definition
 
 " Vim native UI colors (UI is basically what's left after removing

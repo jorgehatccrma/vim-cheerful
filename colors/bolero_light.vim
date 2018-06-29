@@ -267,8 +267,10 @@ hi link TagbarType Type
 " Update lightline automagically when sourcing this file
 if exists('g:loaded_lightline')
 
-  let path = expand('%:p:h:h')
-  exec 'source' . path . '/autoload/lightline/colorscheme/bolero.vim'
+  let s:path = expand('<sfile>:p:h:h')
+
+  exec 'source ' . s:path . '/autoload/bolero.vim'
+  exec 'source ' . s:path . '/autoload/lightline/colorscheme/bolero.vim'
 
 	let g:lightline.colorscheme = 'bolero'
 	call lightline#colorscheme()
@@ -277,7 +279,6 @@ endif
 " Update tmux automagically when sourcing this file
 if exists('g:bolero#maincolor')
 
-  let path = expand('%:p:h:h')
-  exec 'source' . path . '/bolero/tmux.vim'
+  exec 'runtime! /plugin/tmux.vim'
 
 endif

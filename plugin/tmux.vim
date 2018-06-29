@@ -74,7 +74,7 @@ let s:left = "'" . s:left . "'"
 " For the right status, the transitions neer to be flip (e.g use _1To2 if CFG1
 " is on the right of the transition and CFG2 is at the left)
 let s:right = s:_2To1 . '' . s:CFG2
-let s:right = s:right . '#(tmux-spotify-info)#(tmux-itunes-info)'
+let s:right = s:right . ' #(tmux-spotify-info)#(tmux-itunes-info) '
 let s:right = s:right . s:_1rTo2 . '' . s:CFG1_r
 let s:right = s:right . ' #(batteryleft.sh) │ %b %d %H:%M '
 let s:right =  "'" . s:right . "'"
