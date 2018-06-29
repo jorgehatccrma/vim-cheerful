@@ -46,85 +46,85 @@ let colors_name = "bolero_dark"
 
 " Edit window
 
-call bolero#HL("Normal",          g:bolero_dark.ui.main_bg)
-call bolero#HL("Normal",          g:bolero_dark.ui.main_fg)
+call bolero#config#HL("Normal",          g:bolero_dark.ui.main_bg)
+call bolero#config#HL("Normal",          g:bolero_dark.ui.main_fg)
 " Usually the terminal application highjacks the cursor, so no point in
 " customizing it
-" call bolero#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
-call bolero#HL("LineNr",          g:bolero_dark.ui.base_bg)
-call bolero#HL("LineNr",          g:bolero_dark.ui.gutter)
-call bolero#HL("EndOfBuffer",     g:bolero_dark.ui.base_bg)
-call bolero#HL("CursorColumn",    g:bolero_dark.ui.hlted)
-call bolero#HL("CursorLine",      g:bolero_dark.ui.hlted_bg)
-call bolero#HL("CursorLine",      {'usenone': 1})
-call bolero#HL("CursorLineNr",    g:bolero_dark.ui.yellow_accent)
-call bolero#HL("ColorColumn",     g:bolero_dark.ui.hlted_bg)
-call bolero#HL("Visual",          g:bolero_dark.lghtln.accent2)
+" call bolero#config#HL("Cursor",          {'bg': 'Green 500', 'fg': 'Grey 200'})
+call bolero#config#HL("LineNr",          g:bolero_dark.ui.base_bg)
+call bolero#config#HL("LineNr",          g:bolero_dark.ui.gutter)
+call bolero#config#HL("EndOfBuffer",     g:bolero_dark.ui.base_bg)
+call bolero#config#HL("CursorColumn",    g:bolero_dark.ui.hlted)
+call bolero#config#HL("CursorLine",      g:bolero_dark.ui.hlted_bg)
+call bolero#config#HL("CursorLine",      {'usenone': 1})
+call bolero#config#HL("CursorLineNr",    g:bolero_dark.ui.yellow_accent)
+call bolero#config#HL("ColorColumn",     g:bolero_dark.ui.hlted_bg)
+call bolero#config#HL("Visual",          g:bolero_dark.lghtln.accent2)
 
 " " Gutter
-call bolero#HL("FoldColumn",      g:bolero_dark.ui.base_bg)
-call bolero#HL("FoldColumn",      g:bolero_dark.ui.gutter)
-call bolero#HL("Folded",          g:bolero_dark.ui.hlted)
-call bolero#HL("SignColumn",      g:bolero_dark.ui.base_bg)
-call bolero#HL("SignColumn",      g:bolero_dark.ui.gutter)
+call bolero#config#HL("FoldColumn",      g:bolero_dark.ui.base_bg)
+call bolero#config#HL("FoldColumn",      g:bolero_dark.ui.gutter)
+call bolero#config#HL("Folded",          g:bolero_dark.ui.hlted)
+call bolero#config#HL("SignColumn",      g:bolero_dark.ui.base_bg)
+call bolero#config#HL("SignColumn",      g:bolero_dark.ui.gutter)
 
 " Splits
 " NeoVim has a reversed interpretation of BG and FG than vim
-call bolero#HL("VertSplit",       g:bolero_dark.lghtln.accent2)
-call bolero#HL("VertSplit",       g:bolero_dark.ui.base_bg)
+call bolero#config#HL("VertSplit",       g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("VertSplit",       g:bolero_dark.ui.base_bg)
 if has('nvim')
-  call bolero#HL("VertSplit",     bolero#flip(g:bolero_dark.lghtln.accent2))
-  call bolero#HL("VertSplit",     bolero#flip(g:bolero_dark.ui.base_bg))
+  call bolero#config#HL("VertSplit",     bolero#config#flip(g:bolero_dark.lghtln.accent2))
+  call bolero#config#HL("VertSplit",     bolero#config#flip(g:bolero_dark.ui.base_bg))
 endif
-call bolero#HL("VertSplit",       {'usenone': 1})
+call bolero#config#HL("VertSplit",       {'usenone': 1})
 
 " Window / Tabs
 " who needs Tabs anyway
-" call bolero#HL("TabLine",         {'bg': 'Green 800', 'fg': 'Grey 200'})
-" call bolero#HL("TabLineFill",     g:bolero_dark.ui.base_bg)
-" call bolero#HL("TabLineFill",     g:bolero_dark.ui.main_fg)
-" call bolero#HL("TabLineFill",     {'usenone': 1})
-" call bolero#HL("TabLineSel",      g:bolero_dark.ui.selection)
+" call bolero#config#HL("TabLine",         {'bg': 'Green 800', 'fg': 'Grey 200'})
+" call bolero#config#HL("TabLineFill",     g:bolero_dark.ui.base_bg)
+" call bolero#config#HL("TabLineFill",     g:bolero_dark.ui.main_fg)
+" call bolero#config#HL("TabLineFill",     {'usenone': 1})
+" call bolero#config#HL("TabLineSel",      g:bolero_dark.ui.selection)
 
 " " File Navigation / Searching
-call bolero#HL("Search",          g:bolero_dark.ui.alert)
-call bolero#HL("IncSearch",       g:bolero_dark.ui.blue_accent)
-call bolero#HL("Directory",       g:bolero_dark.ui.blue_accent)
+call bolero#config#HL("Search",          g:bolero_dark.ui.alert)
+call bolero#config#HL("IncSearch",       g:bolero_dark.ui.blue_accent)
+call bolero#config#HL("Directory",       g:bolero_dark.ui.blue_accent)
 
 " " Autocomplete menu
-call bolero#HL("Pmenu",           g:bolero_dark.lghtln.accent2)
-call bolero#HL("PmenuSel",        g:bolero_dark.lghtln.accent1)
+call bolero#config#HL("Pmenu",           g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("PmenuSel",        g:bolero_dark.lghtln.accent1)
 
 " Wildmenu/bufferline
-call bolero#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
-call bolero#HL("WildMenu",        {'usenone': 1})
+call bolero#config#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("WildMenu",        {'usenone': 1})
 
 " keep `StatusLine` similar to VertSplit
 " Status Line inverted colors control bothe WildMenu (non-selected) and the
 " vert-split continuation in the bufferline (only visible when there's a v-split
-call bolero#HL("StatusLine",      bolero#flip(g:bolero_dark.lghtln.accent1))
-call bolero#HL("StatusLine",      {'usenone': 1})
-call bolero#HL("StatusLineNC",    g:bolero_dark.ui.selection)
-call bolero#HL("StatusLineNC",    {'usenone': 1})
+call bolero#config#HL("StatusLine",      bolero#config#flip(g:bolero_dark.lghtln.accent1))
+call bolero#config#HL("StatusLine",      {'usenone': 1})
+call bolero#config#HL("StatusLineNC",    g:bolero_dark.ui.selection)
+call bolero#config#HL("StatusLineNC",    {'usenone': 1})
 
-call bolero#HL("SpellBad",        g:bolero_dark.ui.warn)
-call bolero#HL("SpellCap",        g:bolero_dark.ui.alert)
-call bolero#HL("MatchParen",      g:bolero_dark.ui.error)
+call bolero#config#HL("SpellBad",        g:bolero_dark.ui.warn)
+call bolero#config#HL("SpellCap",        g:bolero_dark.ui.alert)
+call bolero#config#HL("MatchParen",      g:bolero_dark.ui.error)
 
-call bolero#HL("Underlined",      g:bolero_dark.ui.yellow_accent)
-" bolero#HL("Ignore", {})
-call bolero#HL("Error",           g:bolero_dark.ui.error)
-call bolero#HL("Todo",            bolero#flip(g:bolero_dark.ui.blue_accent))
+call bolero#config#HL("Underlined",      g:bolero_dark.ui.yellow_accent)
+" bolero#config#HL("Ignore", {})
+call bolero#config#HL("Error",           g:bolero_dark.ui.error)
+call bolero#config#HL("Todo",            bolero#config#flip(g:bolero_dark.ui.blue_accent))
 
 
 " Special characters (the ones shown with `:set list`)
 " The "NonText" highlighting will be used for "eol", "extends" and
 " precedes".  "SpecialKey" for "nbsp", "tab" and "trail".
-call bolero#HL("SpecialKey",      g:bolero_dark.ui.warn)
-call bolero#HL("NonText",         g:bolero_dark.ui.warn)
+call bolero#config#HL("SpecialKey",      g:bolero_dark.ui.warn)
+call bolero#config#HL("NonText",         g:bolero_dark.ui.warn)
 
 " NERDTree customizations
-call bolero#HL("nerdtreeFileExtensionLabel_sh", g:bolero_dark.syntax.string)
+call bolero#config#HL("nerdtreeFileExtensionLabel_sh", g:bolero_dark.syntax.string)
 
 
 
@@ -133,51 +133,51 @@ call bolero#HL("nerdtreeFileExtensionLabel_sh", g:bolero_dark.syntax.string)
 
 " Standard vim groups (see :help group-name)
 " Really, type :help group-name, you'll see the color scheme in action!)
-call bolero#HL("Comment", g:bolero_dark.syntax.comment)
+call bolero#config#HL("Comment", g:bolero_dark.syntax.comment)
 
-call bolero#HL("Constant", g:bolero_dark.syntax.constant)
-call bolero#HL("String", g:bolero_dark.syntax.string)
-call bolero#HL("Float", g:bolero_dark.syntax.float)
+call bolero#config#HL("Constant", g:bolero_dark.syntax.constant)
+call bolero#config#HL("String", g:bolero_dark.syntax.string)
+call bolero#config#HL("Float", g:bolero_dark.syntax.float)
 hi   link   Character       String
 hi   link   Number          Float
 hi   link   Boolean         Float
 
-call bolero#HL("Identifier", g:bolero_dark.syntax.func_name)
+call bolero#config#HL("Identifier", g:bolero_dark.syntax.func_name)
 " hi   link         Function        Identifier
 
 
-call bolero#HL("Statement", g:bolero_dark.syntax.statement)
-" bolero#HL("Conditional", {})
-" bolero#HL("Repeat", {})
-" bolero#HL("Label", {})
-" bolero#HL("Operator", {})
-" bolero#HL("Keyword", {})
-" bolero#HL("Exception", {})
+call bolero#config#HL("Statement", g:bolero_dark.syntax.statement)
+" bolero#config#HL("Conditional", {})
+" bolero#config#HL("Repeat", {})
+" bolero#config#HL("Label", {})
+" bolero#config#HL("Operator", {})
+" bolero#config#HL("Keyword", {})
+" bolero#config#HL("Exception", {})
 
-call bolero#HL("PreProc", g:bolero_dark.ui.yellow_accent)
-" bolero#HL("PreProc", {})
-" bolero#HL("Include", {})
-" bolero#HL("Define", {})
-" bolero#HL("Macro", {})
-" bolero#HL("PreCondit", {})
+call bolero#config#HL("PreProc", g:bolero_dark.ui.yellow_accent)
+" bolero#config#HL("PreProc", {})
+" bolero#config#HL("Include", {})
+" bolero#config#HL("Define", {})
+" bolero#config#HL("Macro", {})
+" bolero#config#HL("PreCondit", {})
 
-call bolero#HL("Type", g:bolero_dark.syntax.type)
-" bolero#HL("StorageClass", {})
-" bolero#HL("Structure", {})
-" bolero#HL("Typedef", {})
+call bolero#config#HL("Type", g:bolero_dark.syntax.type)
+" bolero#config#HL("StorageClass", {})
+" bolero#config#HL("Structure", {})
+" bolero#config#HL("Typedef", {})
 
-call bolero#HL("Special", g:bolero_dark.syntax.special)
-" bolero#HL("SpecialChar", {})
-" bolero#HL("Tag", {})
-" bolero#HL("Delimiter", {})
-" bolero#HL("SpecialComment", {})
-" bolero#HL("Debug", {})
+call bolero#config#HL("Special", g:bolero_dark.syntax.special)
+" bolero#config#HL("SpecialChar", {})
+" bolero#config#HL("Tag", {})
+" bolero#config#HL("Delimiter", {})
+" bolero#config#HL("SpecialComment", {})
+" bolero#config#HL("Debug", {})
 
 " ### LANGUAGE SPECIFIC
 
 " ### Python
 
-call bolero#HL("pythonFunction", g:bolero_dark.syntax.func_name)  " use to have cterm=NONE
+call bolero#config#HL("pythonFunction", g:bolero_dark.syntax.func_name)  " use to have cterm=NONE
 hi  link pythonInclude    Type
 hi  link pythonStatement  Type
 hi  link pythonDecoratorName pythonDecorator
@@ -198,16 +198,16 @@ hi  link pythonTodo       Todo
 " hi   link      vimHiNmbr       Operator
 hi   link      vimVar      Type
 hi   link      vimParenSep Special
-call bolero#HL("helpOption", g:bolero_dark.ui.yellow_accent)
-call bolero#HL("helpHyperTextEntry", g:bolero_dark.ui.green_accent)
-call bolero#HL("helpHeadline", g:bolero_dark.ui.yellow_accent)
+call bolero#config#HL("helpOption", g:bolero_dark.ui.yellow_accent)
+call bolero#config#HL("helpHyperTextEntry", g:bolero_dark.ui.green_accent)
+call bolero#config#HL("helpHeadline", g:bolero_dark.ui.yellow_accent)
 
 
 " ### Markdown
 
 hi   link      htmlH1          Special
-call bolero#HL("mkdCode", g:bolero_dark.ui.yellow_accent)
-call bolero#HL("mkdCode", g:bolero_dark.ui.hlted_bg)
+call bolero#config#HL("mkdCode", g:bolero_dark.ui.yellow_accent)
+call bolero#config#HL("mkdCode", g:bolero_dark.ui.hlted_bg)
 
 " ### Javascript
 
@@ -232,10 +232,10 @@ let g:bufferline_inactive_highlight = 'StatusLine'
 " let g:bufferline_inactive_highlight = 'InactiveBuffer'
 "
 " Here I define their highlight colors
-" call bolero#HL("ActiveBuffer", g:bolero_dark.ui.green_accent)
-" call bolero#HL("ActiveBuffer", {'bg': 'Grey 800', 'fg': 'White', 'usenone': 1})
-" call bolero#HL("InactiveBuffer", g:bolero_dark.ui.yellow_accent)
-" call bolero#HL("InactiveBuffer", {'bg': 'Grey 800', 'fg': 'Grey 500', 'usenone': 1})
+" call bolero#config#HL("ActiveBuffer", g:bolero_dark.ui.green_accent)
+" call bolero#config#HL("ActiveBuffer", {'bg': 'Grey 800', 'fg': 'White', 'usenone': 1})
+" call bolero#config#HL("InactiveBuffer", g:bolero_dark.ui.yellow_accent)
+" call bolero#config#HL("InactiveBuffer", {'bg': 'Grey 800', 'fg': 'Grey 500', 'usenone': 1})
 
 " NOTE: these bufferline highlight groups can be overriden in the airline
 " theme, allowing to change highlight depending on the mode
@@ -244,13 +244,13 @@ let g:bufferline_inactive_highlight = 'StatusLine'
 " ### ALE Specific Ones
 
 " Try to keep these in sync with ALE's colortheme
-call bolero#HL("ALEErrorSign",               g:bolero_dark.ui.error)
-call bolero#HL("ALEStyleErrorSign",          g:bolero_dark.ui.error)
-call bolero#HL("ALEWarningSign",             g:bolero_dark.ui.alert)
-call bolero#HL("ALEStyleWarningSign",        g:bolero_dark.ui.alert)
-call bolero#HL("ALEInfoSign",                g:bolero_dark.ui.info)
-call bolero#HL("ALESignColumnWithErrors",    g:bolero_dark.ui.error)
-call bolero#HL("ALESignColumnWithoutErrors", g:bolero_dark.ui.error)
+call bolero#config#HL("ALEErrorSign",               g:bolero_dark.ui.error)
+call bolero#config#HL("ALEStyleErrorSign",          g:bolero_dark.ui.error)
+call bolero#config#HL("ALEWarningSign",             g:bolero_dark.ui.alert)
+call bolero#config#HL("ALEStyleWarningSign",        g:bolero_dark.ui.alert)
+call bolero#config#HL("ALEInfoSign",                g:bolero_dark.ui.info)
+call bolero#config#HL("ALESignColumnWithErrors",    g:bolero_dark.ui.error)
+call bolero#config#HL("ALESignColumnWithoutErrors", g:bolero_dark.ui.error)
 
 
 
@@ -269,7 +269,7 @@ if exists('g:loaded_lightline')
 
   let s:path = expand('<sfile>:p:h:h')
 
-  exec 'source ' . s:path . '/autoload/bolero.vim'
+  exec 'source ' . s:path . '/autoload/bolero/config.vim'
   exec 'source ' . s:path . '/autoload/lightline/colorscheme/bolero.vim'
 
 	let g:lightline.colorscheme = 'bolero'
