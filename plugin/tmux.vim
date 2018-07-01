@@ -99,7 +99,6 @@ call add(s:commands, "set -g status-fg '" . s:main_fg . "'")
 call add(s:commands, "setw -g window-status-format '\#I:\#W'")
 call add(s:commands, "setw -g window-status-current-format ' \#I:\#W [\#F] '")
 
-
 " messaging
 call add(s:commands, "set -g message-fg '" . s:accnt_1 . "'")
 call add(s:commands, "set -g message-bg '" . s:canvas . "'")
@@ -143,3 +142,13 @@ let s:x = tempname()
 call writefile(s:commands, s:x)
 call execute(":!tmux source-file " . s:x)
 
+
+"------------------------------------------------------------------------------
+" Function to save conf as a tmux conf file
+"------------------------------------------------------------------------------
+function! BoleroTmuxConfToFile(filename)
+  let l:x = tempname()
+  call writefile(s:commands, l:x)
+  let l:cmd = ":!cp " . l:x ." " . a:filename
+  call execute(l:cmd)
+endfunction
