@@ -431,12 +431,12 @@ endif
 
 let s:lghtln          = {}
 let s:lghtln.accent1  = {
-      \'fg': g:bolero#maincolor . ' 100',
+      \'fg': g:bolero#maincolor . ' 50',
       \'bg': g:bolero#maincolor . ' 900',
       \}
 let s:lghtln.accent2  = {
-      \'fg': g:bolero#maincolor . ' 900',
-      \'bg': g:bolero#maincolor . ' 100',
+      \'fg': g:bolero#maincolor . ' 50',
+      \'bg': g:bolero#maincolor . ' 600',
       \}
 
 " Common to all versions

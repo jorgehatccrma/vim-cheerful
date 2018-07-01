@@ -11,7 +11,7 @@ let s:base_color_name = g:bolero#maincolor
 let s:canvas = tolower(g:bolero#colormap['Black'][0])
 let s:main_bg = tolower(g:bolero#colormap[s:base_color_name . " 900"][0])
 let s:main_fg = tolower(g:bolero#colormap[s:base_color_name . " 50"][0])
-let s:scndry_fg = tolower(g:bolero#colormap[s:base_color_name . " 100"][0])
+let s:scndry_fg = tolower(g:bolero#colormap[s:base_color_name . " 50"][0])
 let s:scndry_bg = tolower(g:bolero#colormap[s:base_color_name . " 600"][0])
 let s:accnt_1 = tolower(g:bolero#colormap[s:base_color_name . " 300"][0])
 
@@ -89,7 +89,7 @@ let s:right =  "'" . s:right . "'"
 let s:commands = []
 call add(s:commands, "set -g pane-border-bg '" . s:canvas . "'")
 call add(s:commands, "set -g pane-border-fg '" . s:main_bg . "'")
-call add(s:commands, "set -g pane-active-border-fg '" . s:main_fg . "'")
+call add(s:commands, "set -g pane-active-border-fg '" . s:accnt_1 . "'")
 call add(s:commands, "set -g pane-active-border-bg '" . s:canvas . "'")
 
 " Status bar design

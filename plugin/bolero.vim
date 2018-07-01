@@ -21,7 +21,7 @@
 
 
 " Toggle between both versions of bolero theme (dark and light)
-function! bolero#toggle()
+function! BoleroToggle()
   if g:colors_name ==# 'bolero_dark'
     " if exists('g:airline_theme')
     "   let g:airline_theme = 'bolero_light'
@@ -40,13 +40,13 @@ function! bolero#toggle()
 endfunction
 
 " Apply tmux theme
-function! bolero#TmuxConf()
+function! BoleroTmuxConf()
   runtime 'bolero/tmux.vim'
 endfunction
 
 
 " Run the whole enchilada
-function! bolero#update(basecolor)
+function! BoleroUpdate(basecolor)
   let g:bolero#maincolor = a:basecolor
   exec 'colorscheme ' . g:colors_name
 endfunction
