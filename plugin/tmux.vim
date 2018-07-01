@@ -145,10 +145,11 @@ call execute(":!tmux source-file " . s:x)
 
 "------------------------------------------------------------------------------
 " Function to save conf as a tmux conf file
+"
+" Args:
+"   filename is optional; it defaults to $HOME/.bolero.tmux.conf
 "------------------------------------------------------------------------------
-function! BoleroTmuxConfToFile(filename)
-  let l:x = tempname()
-  call writefile(s:commands, l:x)
-  let l:cmd = ":!cp " . l:x ." " . a:filename
-  call execute(l:cmd)
+function! BoleroTmuxConfToFile(...)
+  let l:filename = get(a:, 1, $HOME . "/.bolero.tmux.conf")
+  call writefile(s:commands, l:filename)
 endfunction
