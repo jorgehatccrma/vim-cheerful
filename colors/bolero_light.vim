@@ -92,8 +92,8 @@ call bolero#config#HL("IncSearch",       g:bolero_light.ui.blue_accent)
 call bolero#config#HL("Directory",       g:bolero_light.ui.blue_accent)
 
 " " Autocomplete menu
-call bolero#config#HL("Pmenu",           g:bolero_light.lghtln.accent2)
-call bolero#config#HL("PmenuSel",        g:bolero_light.lghtln.accent1)
+call bolero#config#HL("Pmenu",        g:bolero_light.lghtln.accent2)
+call bolero#config#HL("PmenuSel",           g:bolero#config#flip(g:bolero_light.lghtln.accent2))
 
 " Wildmenu/bufferline
 call bolero#config#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
@@ -173,7 +173,7 @@ call bolero#config#HL("Special", g:bolero_light.syntax.special)
 " bolero#config#HL("SpecialComment", {})
 " bolero#config#HL("Debug", {})
 
-" ## LANGUAGE SPECIFIC
+" ### LANGUAGE SPECIFIC
 
 " ### Python
 
