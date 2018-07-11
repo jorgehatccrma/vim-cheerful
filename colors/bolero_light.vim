@@ -87,8 +87,8 @@ call bolero#config#HL("VertSplit",       {'usenone': 1})
 " call bolero#config#HL("TabLineSel",      g:bolero_light.ui.selection)
 
 " " File Navigation / Searching
-call bolero#config#HL("Search",          g:bolero_light.ui.alert)
-call bolero#config#HL("IncSearch",       g:bolero_light.ui.blue_accent)
+call bolero#config#HL("Search",          g:bolero_light.lghtln.accent1)
+call bolero#config#HL("IncSearch",       g:bolero_light.lghtln.accent1)
 call bolero#config#HL("Directory",       g:bolero_light.ui.blue_accent)
 
 " " Autocomplete menu

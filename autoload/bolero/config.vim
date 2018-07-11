@@ -369,7 +369,7 @@ let s:dark_ui.yellow_accent = {'fg': 'Yellow A700'}
 let s:dark_ui.green_accent  = {'fg': 'Green 600'}
 let s:dark_ui.blue_accent   = {'fg': 'Light Blue 400'}
 let s:dark_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
-let s:dark_ui.alert         = {'bg': 'Yellow 500', 'fg': 'Grey 900'}
+let s:dark_ui.alert         = {'bg': 'Yellow 700', 'fg': 'Purple 800'}
 let s:dark_ui.warn          = {'bg': 'Dark Grey 900', 'fg': 'Pink A400'}
 let s:dark_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:dark_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
@@ -440,7 +440,7 @@ let s:lghtln.accent2  = {
       \}
 
 " Common to all versions
-let s:lghtln.inactive = {'fg': 'Grey 600', 'bg': 'Grey 900'}
+let s:lghtln.inactive = {'fg': g:bolero#maincolor . ' 300', 'bg': 'Grey 800'}
 let s:lghtln.insert   = {'fg': 'Green 900', 'bg': 'Yellow 500'}
 let s:lghtln.visual   = {'fg': 'Green 900', 'bg': 'Light Green 500'}
 let s:lghtln.select   = {'fg': 'Blue Grey 50', 'bg': 'Blue 400'}
