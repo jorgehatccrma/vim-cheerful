@@ -70,10 +70,10 @@ call bolero#config#HL("SignColumn",      g:bolero_light.ui.gutter)
 
 " Splits
 " NeoVim has a reversed interpretation of BG and FG than vim
-call bolero#config#HL("VertSplit",       g:bolero_light.lghtln.accent2)
+call bolero#config#HL("VertSplit",       g:bolero_light.lghtln.accent1)
 call bolero#config#HL("VertSplit",       g:bolero_light.ui.base_bg)
 if has('nvim')
-call bolero#config#HL("VertSplit",       bolero#config#flip(g:bolero_light.lghtln.accent2))
+  call bolero#config#HL("VertSplit",       g:bolero_light.lghtln.accent1)
   call bolero#config#HL("VertSplit",     bolero#config#flip(g:bolero_light.ui.base_bg))
 endif
 call bolero#config#HL("VertSplit",       {'usenone': 1})
