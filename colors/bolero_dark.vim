@@ -107,14 +107,14 @@ call bolero#config#HL("StatusLine",      {'usenone': 1})
 call bolero#config#HL("StatusLineNC",    g:bolero_dark.ui.selection)
 call bolero#config#HL("StatusLineNC",    {'usenone': 1})
 
-call bolero#config#HL("SpellBad",        g:bolero_dark.ui.warn)
+call bolero#config#HL("SpellBad",        g:bolero_dark.lghtln.accent2)
 call bolero#config#HL("SpellCap",        g:bolero_dark.ui.alert)
 call bolero#config#HL("MatchParen",      g:bolero_dark.ui.error)
 
 call bolero#config#HL("Underlined",      g:bolero_dark.ui.yellow_accent)
 " bolero#config#HL("Ignore", {})
 call bolero#config#HL("Error",           g:bolero_dark.ui.error)
-call bolero#config#HL("Todo",            bolero#config#flip(g:bolero_dark.ui.blue_accent))
+call bolero#config#HL("Todo",            bolero#config#flip(g:bolero_dark.lghtln.accent1))
 
 
 " Special characters (the ones shown with `:set list`)
