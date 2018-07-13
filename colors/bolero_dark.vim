@@ -107,7 +107,7 @@ call bolero#config#HL("StatusLine",      {'usenone': 1})
 call bolero#config#HL("StatusLineNC",    g:bolero_dark.ui.selection)
 call bolero#config#HL("StatusLineNC",    {'usenone': 1})
 
-call bolero#config#HL("SpellBad",        g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("SpellBad",        g:bolero_dark.ui.warn)
 call bolero#config#HL("SpellCap",        g:bolero_dark.ui.alert)
 call bolero#config#HL("MatchParen",      g:bolero_dark.ui.error)
 
