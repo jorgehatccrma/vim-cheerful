@@ -87,8 +87,8 @@ call bolero#config#HL("VertSplit",       {'usenone': 1})
 " call bolero#config#HL("TabLineSel",      g:bolero_dark.ui.selection)
 
 " " File Navigation / Searching
-call bolero#config#HL("Search",          g:bolero_dark.lghtln.accent2)
-call bolero#config#HL("IncSearch",       g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("Search",          g:bolero_dark.lghtln.accent1)
+call bolero#config#HL("IncSearch",       g:bolero_dark.lghtln.accent1)
 call bolero#config#HL("Directory",       g:bolero_dark.ui.blue_accent)
 
 " " Autocomplete menu
@@ -108,7 +108,7 @@ call bolero#config#HL("StatusLineNC",    g:bolero_dark.ui.selection)
 call bolero#config#HL("StatusLineNC",    {'usenone': 1})
 
 call bolero#config#HL("SpellBad",        g:bolero_dark.ui.warn)
-call bolero#config#HL("SpellCap",        g:bolero_dark.ui.alert)
+call bolero#config#HL("SpellCap",        bolero#config#flip(g:bolero_dark.ui.alert))
 call bolero#config#HL("MatchParen",      g:bolero_dark.ui.error)
 
 call bolero#config#HL("Underlined",      g:bolero_dark.ui.yellow_accent)
@@ -126,7 +126,14 @@ call bolero#config#HL("NonText",         g:bolero_dark.ui.warn)
 " NERDTree customizations
 call bolero#config#HL("nerdtreeFileExtensionLabel_sh", g:bolero_dark.syntax.string)
 
+" Git
+call bolero#config#HL("DiffAdd", g:bolero_dark.syntax.DiffAdd)
+call bolero#config#HL("DiffChange", g:bolero_dark.syntax.DiffChange)
+call bolero#config#HL("DiffDelete", g:bolero_dark.syntax.DiffDelete)
+call bolero#config#HL("DiffText", g:bolero_dark.syntax.DiffText)
 
+call bolero#config#HL("diffAdded", g:bolero_dark.ui.green_accent)
+call bolero#config#HL("diffRemoved", g:bolero_dark.ui.red_accent)
 
 
 " ## SYNTAX

@@ -368,6 +368,7 @@ let s:dark_ui.gutter        = {'fg': 'Blue Grey 500'}
 let s:dark_ui.yellow_accent = {'fg': 'Yellow A700'}
 let s:dark_ui.green_accent  = {'fg': 'Green 600'}
 let s:dark_ui.blue_accent   = {'fg': 'Light Blue 400'}
+let s:dark_ui.red_accent    = {'fg': 'Red 500'}
 let s:dark_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
 let s:dark_ui.alert         = {'bg': 'Yellow 700', 'fg': 'Purple 800'}
 let s:dark_ui.warn          = {'bg': 'Dark Grey 900', 'fg': 'Pink A400'}
@@ -385,6 +386,13 @@ let s:dark_syntax.type      = {'fg': 'Lime A700'}
 let s:dark_syntax.special   = {'fg': 'Light Blue 300'}
 let s:dark_syntax.statement = {'fg': 'Green 500'}
 
+" Git related highlightling
+let s:dark_syntax.DiffAdd    = {'bg': 'Light Green 900'}
+let s:dark_syntax.DiffChange = {'bg': 'Amber 700'}
+let s:dark_syntax.DiffDelete = {'bg': 'Red 900'}
+let s:dark_syntax.DiffText   = {'bg': 'Blue 800'}
+
+
 
 " # Light Theme Definition
 
@@ -400,6 +408,7 @@ let s:light_ui.gutter        = {'fg': 'Brown 300'}
 let s:light_ui.yellow_accent = {'fg': 'Yellow 900'}
 let s:light_ui.green_accent  = {'fg': 'Green 600'}
 let s:light_ui.blue_accent   = {'fg': 'Blue 400'}
+let s:light_ui.red_accent    = {'fg': 'Red 500'}
 let s:light_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
 let s:light_ui.alert         = {'bg': 'Yellow 500', 'fg': 'Grey 900'}
 let s:light_ui.warn          = {'bg': 'Purple A100', 'fg': 'Grey 900'}
@@ -416,6 +425,14 @@ let s:light_syntax.func_name = {'fg': 'Red 700'}
 let s:light_syntax.type      = {'fg': 'Blue 500'}
 let s:light_syntax.special   = {'fg': 'Purple 700'}
 let s:light_syntax.statement = {'fg': 'Green 400'}
+
+" Git related highlightling
+let s:light_syntax.DiffAdd    = {'bg': 'Light Green 700'}
+let s:light_syntax.DiffChange = {'bg': 'Amber 500'}
+let s:light_syntax.DiffDelete = {'bg': 'Red 700'}
+let s:light_syntax.DiffText   = {'bg': 'Blue 600'}
+
+
 
 
 
@@ -460,4 +477,4 @@ let g:bolero_light.ui = deepcopy(s:light_ui)
 let g:bolero_light.syntax = deepcopy(s:light_syntax)
 let g:bolero_light.lghtln = deepcopy(s:lghtln)
 " lightline overrides for light theme
-let g:bolero_light.lghtln.inactive = {'fg': 'Brow 300', 'bg': 'Brown 100'}
+let g:bolero_light.lghtln.inactive = {'fg': 'Brown 300', 'bg': 'Brown 100'}
