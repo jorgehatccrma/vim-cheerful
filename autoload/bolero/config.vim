@@ -388,8 +388,10 @@ let s:dark_syntax.statement = {'fg': 'Green 500'}
 
 " Git related highlightling
 let s:dark_syntax.DiffAdd    = {'bg': 'Light Green 900'}
-let s:dark_syntax.DiffChange = {'bg': 'Amber 700'}
-let s:dark_syntax.DiffDelete = {'bg': 'Red 900'}
+" let s:dark_syntax.DiffChange = {'bg': 'Amber 700'}
+" let s:dark_syntax.DiffChange = {'bg': 'Orange 800'}
+let s:dark_syntax.DiffChange = {'bg': 'Purple 900'}
+let s:dark_syntax.DiffDelete = {'bg': 'Red 900', 'fg': 'White'}
 let s:dark_syntax.DiffText   = {'bg': 'Blue 800'}
 
 
@@ -428,8 +430,8 @@ let s:light_syntax.statement = {'fg': 'Green 400'}
 
 " Git related highlightling
 let s:light_syntax.DiffAdd    = {'bg': 'Light Green 700'}
-let s:light_syntax.DiffChange = {'bg': 'Amber 500'}
-let s:light_syntax.DiffDelete = {'bg': 'Red 700'}
+let s:light_syntax.DiffChange = {'bg': 'Yellow 200'}
+let s:light_syntax.DiffDelete = {'bg': 'Red 700', 'fg': 'White'}
 let s:light_syntax.DiffText   = {'bg': 'Blue 600'}
 
 
