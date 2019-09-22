@@ -61,16 +61,20 @@ let s:p.select.left[0] = HLElem(s:cmap.lghtln.select)
 let s:p.replace.left[0] = HLElem(s:cmap.lghtln.replace)
 
 " Finally, set the lightline palette
+echom "About to update Bolero lightline theme"
 let g:lightline#colorscheme#bolero#palette = s:p
+echom "Updated Bolero lightline theme"
 
 
-" echom "Updating Bolero lightline theme"
 
 " # *** DON'T ADD ANYTHING AFTER THIS SECTION ***
 "
 " Update lightline automagically when sourcing this file
 if exists('g:loaded_lightline')
+  echom "About to update lightline colorscheme"
   let g:lightline.colorscheme = 'bolero'
+  echom "About to call lightline#colorscheme"
   call lightline#colorscheme()
+  echom "Lightline colorscheme updated"
 endif
 
