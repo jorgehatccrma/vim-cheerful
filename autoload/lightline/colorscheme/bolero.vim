@@ -68,19 +68,14 @@ let g:lightline#colorscheme#bolero#palette = s:p
 " Update lightline automagically when sourcing this file
 if exists('g:loaded_lightline')
   let g:lightline.colorscheme = 'bolero'
+
+  " FixMe: Not sure why this is necessary (shouldn't the existance of
+  " `g:loaded_lightline` be enough?
   if &rtp =~ 'lightline'
-    echom "Found 'lightline' in rtp"
-    echom "About to call lightline#colorscheme"
     call lightline#colorscheme()
-    echom "Lightline colorscheme updated"
-  elseif &rtp =~ 'lightline.vim'
-    echom "Found 'lightline.vim' in rtp"
-    echom "About to call lightline#colorscheme"
-    call lightline#colorscheme()
-    echom "Lightline colorscheme updated"
   else
-    echom "'lightline#colorscheme()' not found."
-    echom "Skipping application of cheerfully(bolero) palette "
+    echoerr "'lightline#colorscheme()' not found."
+    echom "Skipping application of cheerfully(bolero) palette"
   endif
 endif
 
