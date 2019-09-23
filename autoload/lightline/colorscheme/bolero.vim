@@ -68,14 +68,8 @@ let g:lightline#colorscheme#bolero#palette = s:p
 " Update lightline automagically when sourcing this file
 if exists('g:loaded_lightline')
   let g:lightline.colorscheme = 'bolero'
-
-  " FixMe: Not sure why this is necessary (shouldn't the existance of
-  " `g:loaded_lightline` be enough?
-  if &rtp =~ 'lightline'
-    call lightline#update()
-  else
-    echoerr "'lightline#colorscheme()' not found."
-    echom "Skipping application of cheerfully(bolero) palette"
-  endif
+  call lightline#update()
+else
+  echom "Skipping application of cheerfully(bolero) palette"
 endif
 
