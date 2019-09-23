@@ -72,7 +72,7 @@ if exists('g:loaded_lightline')
   " FixMe: Not sure why this is necessary (shouldn't the existance of
   " `g:loaded_lightline` be enough?
   if &rtp =~ 'lightline'
-    call lightline#colorscheme()
+    call lightline#update()
   else
     echoerr "'lightline#colorscheme()' not found."
     echom "Skipping application of cheerfully(bolero) palette"
