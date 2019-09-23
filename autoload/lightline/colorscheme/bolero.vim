@@ -60,21 +60,27 @@ let s:p.visual.left[0] = HLElem(s:cmap.lghtln.visual)
 let s:p.select.left[0] = HLElem(s:cmap.lghtln.select)
 let s:p.replace.left[0] = HLElem(s:cmap.lghtln.replace)
 
-" Finally, set the lightline palette
-echom "About to update Bolero lightline theme"
-let g:lightline#colorscheme#bolero#palette = s:p
-echom "Updated Bolero lightline theme"
-
-
-
 " # *** DON'T ADD ANYTHING AFTER THIS SECTION ***
-"
+
+" Finally, set the lightline palette
+let g:lightline#colorscheme#bolero#palette = s:p
+
 " Update lightline automagically when sourcing this file
 if exists('g:loaded_lightline')
-  echom "About to update lightline colorscheme"
   let g:lightline.colorscheme = 'bolero'
-  echom "About to call lightline#colorscheme"
-  call lightline#colorscheme()
-  echom "Lightline colorscheme updated"
+  if &rtp =~ 'lightline'
+    echom "Found 'lightline' in rtp"
+    echom "About to call lightline#colorscheme"
+    call lightline#colorscheme()
+    echom "Lightline colorscheme updated"
+  elseif &rtp =~ 'lightline.vim'
+    echom "Found 'lightline.vim' in rtp"
+    echom "About to call lightline#colorscheme"
+    call lightline#colorscheme()
+    echom "Lightline colorscheme updated"
+  else
+    echom "'lightline#colorscheme()' not found."
+    echom "Skipping application of cheerfully(bolero) palette "
+  endif
 endif
 
