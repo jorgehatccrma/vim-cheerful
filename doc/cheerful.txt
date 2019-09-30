@@ -1,6 +1,36 @@
-" Cheerful docs
+*cheerful.txt* functionality for the cheerful vim theme
 
-TODO
+                ___ _                     __       _       ~
+               / __\ |__   ___  ___ _ __ / _|_   _| |      ~
+              / /  | '_ \ / _ \/ _ \ '__| |_| | | | |      ~
+             / /___| | | |  __/  __/ |  |  _| |_| | |      ~
+             \____/|_| |_|\___|\___|_|  |_|  \__,_|_|      ~
+             
+                     ___       _                           ~
+                    / __\ ___ | | ___ _ __ ___             ~
+                   /__\/// _ \| |/ _ \ '__/ _ \            ~
+                  / \/  \ (_) | |  __/ | | (_) |           ~
+                  \_____/\___/|_|\___|_|  \___/            ~
+
+
+        Functionality for the cheerful Vim theme framework.
+
+
+====================================================================
+CONTENTS                                          *CheerfulContents*
+
+    1. Usage ................ |CheerfulUsage|
+    2. Mappings ............. |CheerfulMappings|
+    3. License .............. |CheerfulLicense|
+    4. Bugs ................. |CheerfulBugs|
+    5. Contributing ......... |CheerfulContributing|
+    6. Changelog ............ |CheerfulChangelog|
+    7. Credits .............. |CheerfulCredits|
+
+
+====================================================================
+Section 1: Usage                                     *CheerfulUsage*
+
 
 Switch to light theme:
 
@@ -9,3 +39,43 @@ Switch to light theme:
 Switch to dark theme:
 
 `:colorscheme bolero_light`
+
+
+====================================================================
+Section 1: Usage                                     *CheerfulUsage*
+
+TODO: complete
+
+TODO: describe how to tweak colors and themes
+
+TODO: mention and link to `:help group-name`
+
+====================================================================
+Section 2: Mappings                               *CheerfulMappings*
+
+TODO: complete
+
+====================================================================
+Section 3: License                                 *CheerfulLicense*
+
+TODO: complete
+
+====================================================================
+Section 4: Bugs                                       *CheerfulBugs*
+
+TODO: complete
+
+====================================================================
+Section 5: Contributing                       *CheerfulContributing*
+
+TODO: complete
+
+====================================================================
+Section 6: Changelog                             *CheerfulChangelog*
+
+TODO: complete
+
+====================================================================
+Section 7: Credits                                 *CheerfulCredits*
+
+TODO: complete
