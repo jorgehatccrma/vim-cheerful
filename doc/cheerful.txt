@@ -1,1 +1,11 @@
 " Cheerful docs
+
+TODO
+
+Switch to light theme:
+
+`:colorscheme bolero_light`
+
+Switch to dark theme:
+
+`:colorscheme bolero_light`

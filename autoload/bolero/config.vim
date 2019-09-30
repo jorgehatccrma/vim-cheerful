@@ -374,6 +374,7 @@ let s:dark_ui.alert         = {'bg': 'Yellow 700', 'fg': 'Purple 800'}
 let s:dark_ui.warn          = {'bg': 'Dark Grey 900', 'fg': 'Pink A400'}
 let s:dark_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
 let s:dark_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
+let s:dark_ui.todo          = {'bg': 'Yellow A700', 'fg': s:dark_ui.main_bg['bg']}
 
 " Syntax related highlighiting
 let s:dark_syntax           = {}
@@ -414,8 +415,9 @@ let s:light_ui.red_accent    = {'fg': 'Red 500'}
 let s:light_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
 let s:light_ui.alert         = {'bg': 'Yellow 500', 'fg': 'Grey 900'}
 let s:light_ui.warn          = {'bg': 'Purple A100', 'fg': 'Grey 900'}
-let s:light_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
+let s:light_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 200'}
 let s:light_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
+let s:light_ui.todo          = {'bg': 'Blue 400', 'fg': s:light_ui.main_bg['bg']}
 
 " Syntax related highlighiting
 let s:light_syntax           = {}

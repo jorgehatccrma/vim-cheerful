@@ -39,12 +39,6 @@ function! BoleroToggle()
   endif
 endfunction
 
-" Apply tmux theme
-function! BoleroTmuxConf()
-  runtime 'bolero/tmux.vim'
-endfunction
-
-
 " Run the whole enchilada
 function! BoleroUpdate(basecolor)
   let g:bolero#maincolor = a:basecolor

@@ -114,7 +114,7 @@ call bolero#config#HL("MatchParen",      g:bolero_light.ui.error)
 call bolero#config#HL("Underlined",      g:bolero_light.ui.yellow_accent)
 " bolero#config#HL("Ignore", {})
 call bolero#config#HL("Error",           g:bolero_light.ui.error)
-call bolero#config#HL("Todo",            bolero#config#flip(g:bolero_light.ui.blue_accent))
+call bolero#config#HL("Todo",            g:bolero_light.ui.todo)
 
 
 " Special characters (the ones shown with `:set list`)
@@ -282,11 +282,4 @@ if exists('g:loaded_lightline')
 
 	let g:lightline.colorscheme = 'bolero'
 	call lightline#colorscheme()
-endif
-
-" Update tmux automagically when sourcing this file
-if exists('g:bolero#maincolor')
-
-  exec 'runtime! /plugin/tmux.vim'
-
 endif
