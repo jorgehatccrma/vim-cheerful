@@ -5,7 +5,7 @@
               / /  | '_ \ / _ \/ _ \ '__| |_| | | | |      ~
              / /___| | | |  __/  __/ |  |  _| |_| | |      ~
              \____/|_| |_|\___|\___|_|  |_|  \__,_|_|      ~
-             
+
                      ___       _                           ~
                     / __\ ___ | | ___ _ __ ___             ~
                    /__\/// _ \| |/ _ \ '__/ _ \            ~
@@ -31,18 +31,19 @@ CONTENTS                                          *CheerfulContents*
 ====================================================================
 Section 1: Usage                                     *CheerfulUsage*
 
+Currently this plugin provides 2 themes off-the-shelf: `bolero_light` and
+`bolero_dark`. They can be applied as follows:
 
-Switch to light theme:
+  `:colorscheme bolero_light`
 
-`:colorscheme bolero_light`
+or
 
-Switch to dark theme:
+  `:colorscheme bolero_light`
 
-`:colorscheme bolero_light`
+The function `BoleroToggle` is provided as a shortcut to alternate between
+themes. Use it as follows:
 
-
-====================================================================
-Section 1: Usage                                     *CheerfulUsage*
+  `:call BoleroToggle()`
 
 TODO: complete
 

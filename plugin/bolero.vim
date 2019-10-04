@@ -21,7 +21,7 @@
 
 
 " Toggle between both versions of bolero theme (dark and light)
-function! BoleroToggle()
+function! bolero#BoleroToggle()
   if g:colors_name ==# 'bolero_dark'
     " if exists('g:airline_theme')
     "   let g:airline_theme = 'bolero_light'
@@ -40,7 +40,7 @@ function! BoleroToggle()
 endfunction
 
 " Run the whole enchilada
-function! BoleroUpdate(basecolor)
+function! bolero#BoleroUpdate(basecolor)
   let g:bolero#maincolor = a:basecolor
   exec 'colorscheme ' . g:colors_name
 endfunction
@@ -48,3 +48,10 @@ endfunction
 
 let s:path = expand('<sfile>:p:h:h')
 exec 'source ' . s:path . '/autoload/bolero/config.vim'
+
+
+" # Public Interface
+
+command! -nargs=0 BoleroToggle call bolero#BoleroToggle()
+command! -nargs=0 BoleroDark colorscheme bolero_dark
+command! -nargs=0 BoleroLight colorscheme bolero_light
