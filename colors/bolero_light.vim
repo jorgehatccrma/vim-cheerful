@@ -92,9 +92,11 @@ call bolero#config#HL("IncSearch",       g:bolero_light.lghtln.accent1)
 call bolero#config#HL("Directory",       g:bolero_light.ui.blue_accent)
 
 " " Autocomplete menu
-call bolero#config#HL("Pmenu",        g:bolero_light.lghtln.accent2)
-call bolero#config#HL("PmenuSel",           g:bolero#config#flip(g:bolero_light.lghtln.accent2))
+call bolero#config#HL("Pmenu",           g:bolero_light.lghtln.accent2)
+call bolero#config#HL("PmenuSel",        g:bolero#config#flip(g:bolero_light.lghtln.accent2))
 
+" added
+"
 " Wildmenu/bufferline
 call bolero#config#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
 call bolero#config#HL("WildMenu",        {'usenone': 1})
