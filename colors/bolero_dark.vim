@@ -91,9 +91,11 @@ call bolero#config#HL("Search",          g:bolero_dark.lghtln.accent1)
 call bolero#config#HL("IncSearch",       g:bolero_dark.lghtln.accent1)
 call bolero#config#HL("Directory",       g:bolero_dark.ui.blue_accent)
 
-" " Autocomplete menu
-call bolero#config#HL("Pmenu",           g:bolero#config#flip(g:bolero_dark.lghtln.accent2))
-call bolero#config#HL("PmenuSel",        g:bolero_dark.lghtln.accent2)
+" " Command line autocomplete menu
+" call bolero#config#HL("Pmenu",           g:bolero#config#flip(g:bolero_dark.lghtln.accent2))
+" call bolero#config#HL("PmenuSel",        g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("Pmenu",           g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("PmenuSel",        {'usenone': 1})
 
 " Wildmenu/bufferline
 call bolero#config#HL("WildMenu",        g:bolero_dark.lghtln.accent2)
@@ -179,6 +181,9 @@ call bolero#config#HL("Special", g:bolero_dark.syntax.special)
 " bolero#config#HL("Delimiter", {})
 " bolero#config#HL("SpecialComment", {})
 " bolero#config#HL("Debug", {})
+
+call bolero#config#HL("LspInlayHint", g:bolero_dark.syntax.inlay_hint)
+
 
 " ### LANGUAGE SPECIFIC
 

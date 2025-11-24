@@ -17,7 +17,7 @@
 
 " ## Description
 
-" Vim bolero dark colorscheme
+" Vim bolero light colorscheme
 " " Maintainer: Jorge Herrera <jherreras@gmail.com>
 " " Notes:
 
@@ -92,8 +92,10 @@ call bolero#config#HL("IncSearch",       g:bolero_light.lghtln.accent1)
 call bolero#config#HL("Directory",       g:bolero_light.ui.blue_accent)
 
 " " Autocomplete menu
-call bolero#config#HL("Pmenu",           g:bolero_light.lghtln.accent2)
-call bolero#config#HL("PmenuSel",        g:bolero#config#flip(g:bolero_light.lghtln.accent2))
+" call bolero#config#HL("Pmenu",           g:bolero_light.lghtln.accent2)
+" call bolero#config#HL("PmenuSel",        g:bolero#config#flip(g:bolero_light.lghtln.accent2))
+call bolero#config#HL("Pmenu",           g:bolero_dark.lghtln.accent2)
+call bolero#config#HL("PmenuSel",        {'usenone': 1})
 
 " added
 "
@@ -182,6 +184,9 @@ call bolero#config#HL("Special", g:bolero_light.syntax.special)
 " bolero#config#HL("Delimiter", {})
 " bolero#config#HL("SpecialComment", {})
 " bolero#config#HL("Debug", {})
+
+call bolero#config#HL("LspInlayHint", g:bolero_light.syntax.inlay_hint)
+
 
 " ### LANGUAGE SPECIFIC
 

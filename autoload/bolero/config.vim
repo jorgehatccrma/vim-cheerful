@@ -358,34 +358,36 @@ endfunction
 
 " Vim native UI colors (UI is basically what's left after removing
 " syntax-related highligting
-let s:dark_ui               = {}
-let s:dark_ui.base_bg       = {'bg': 'Black'}
-let s:dark_ui.main_bg       = {'bg': 'Dark Grey 800'}
-let s:dark_ui.main_fg       = {'fg': 'Grey 200'}
-let s:dark_ui.hlted         = {'bg': 'Grey 900', 'fg': 'White'}
-let s:dark_ui.hlted_bg      = {'bg': 'Grey 900'}
-let s:dark_ui.gutter        = {'fg': 'Blue Grey 500'}
-let s:dark_ui.yellow_accent = {'fg': 'Yellow A700'}
-let s:dark_ui.green_accent  = {'fg': 'Green 600'}
-let s:dark_ui.blue_accent   = {'fg': 'Light Blue 400'}
-let s:dark_ui.red_accent    = {'fg': 'Red 500'}
-let s:dark_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
-let s:dark_ui.alert         = {'bg': 'Yellow 700', 'fg': 'Purple 800'}
-let s:dark_ui.warn          = {'bg': 'Dark Grey 900', 'fg': 'Pink A400'}
-let s:dark_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 400'}
-let s:dark_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
-let s:dark_ui.todo          = {'bg': 'Yellow A700', 'fg': s:dark_ui.main_bg['bg']}
+let s:dark_ui                = {}
+let s:dark_ui.base_bg        = {'bg': 'Black'}
+let s:dark_ui.main_bg        = {'bg': 'Dark Grey 800'}
+let s:dark_ui.main_fg        = {'fg': 'Grey 200'}
+let s:dark_ui.hlted          = {'bg': 'Grey 900', 'fg': 'White'}
+let s:dark_ui.hlted_bg       = {'bg': 'Grey 900'}
+let s:dark_ui.gutter         = {'fg': 'Blue Grey 500'}
+let s:dark_ui.yellow_accent  = {'fg': 'Yellow A700'}
+let s:dark_ui.green_accent   = {'fg': 'Green 600'}
+let s:dark_ui.blue_accent    = {'fg': 'Light Blue 400'}
+let s:dark_ui.red_accent     = {'fg': 'Red 500'}
+let s:dark_ui.selection      = {'bg': 'Green 600', 'fg': 'Grey 200'}
+let s:dark_ui.alert          = {'bg': 'Yellow 700', 'fg': 'Purple 800'}
+let s:dark_ui.warn           = {'bg': 'Dark Grey 900', 'fg': 'Pink A400'}
+let s:dark_ui.error          = {'bg': 'Red A700', 'fg': 'Grey 400'}
+let s:dark_ui.info           = {'bg': 'Lime A700', 'fg': 'Green 900'}
+let s:dark_ui.todo           = {'bg': 'Yellow A700', 'fg': s:dark_ui.main_bg['bg']}
 
 " Syntax related highlighiting
-let s:dark_syntax           = {}
-let s:dark_syntax.string    = {'fg': 'Amber 700'}
-let s:dark_syntax.comment   = {'fg': 'Blue Grey 500'}
-let s:dark_syntax.constant  = {'fg': 'Pink 600'}
-let s:dark_syntax.float     = {'fg': 'Blue 600'}
-let s:dark_syntax.func_name = {'fg': 'Red 500'}
-let s:dark_syntax.type      = {'fg': 'Lime A700'}
-let s:dark_syntax.special   = {'fg': 'Light Blue 300'}
-let s:dark_syntax.statement = {'fg': 'Green 500'}
+let s:dark_syntax            = {}
+let s:dark_syntax.string     = {'fg': 'Amber 700'}
+let s:dark_syntax.comment    = {'fg': 'Blue Grey 500'}
+let s:dark_syntax.constant   = {'fg': 'Pink 600'}
+let s:dark_syntax.float      = {'fg': 'Blue 600'}
+let s:dark_syntax.func_name  = {'fg': 'Red 500'}
+let s:dark_syntax.type       = {'fg': 'Lime A700'}
+let s:dark_syntax.special    = {'fg': 'Light Blue 300'}
+let s:dark_syntax.statement  = {'fg': 'Green 500'}
+let s:dark_syntax.inlay_hint = {'fg': 'Brown 400'}
+
 
 " Git related highlightling
 let s:dark_syntax.DiffAdd    = {'bg': 'Teal 900', 'fg': 'Grey 200'}
@@ -401,34 +403,35 @@ let s:dark_syntax.DiffText   = {'bg': 'Blue 800'}
 
 " Vim native UI colors (UI is basically what's left after removing
 " syntax-related highligting
-let s:light_ui               = {}
-let s:light_ui.base_bg       = {'bg': 'Grey 50'}
-let s:light_ui.main_bg       = {'bg': 'Blue Grey 50'}
-let s:light_ui.main_fg       = {'fg': 'Brown 800'}
-let s:light_ui.hlted         = {'bg': 'Blue Grey 100', 'fg': 'Brown 500'}
-let s:light_ui.hlted_bg      = {'bg': 'Blue Grey 100'}
-let s:light_ui.gutter        = {'fg': 'Brown 300'}
-let s:light_ui.yellow_accent = {'fg': 'Amber 900'}
-let s:light_ui.green_accent  = {'fg': 'Green 600'}
-let s:light_ui.blue_accent   = {'fg': 'Blue 600'}
-let s:light_ui.red_accent    = {'fg': 'Red 500'}
-let s:light_ui.selection     = {'bg': 'Green 600', 'fg': 'Grey 200'}
-let s:light_ui.alert         = {'bg': 'Amber 500', 'fg': 'Grey 900'}
-let s:light_ui.warn          = {'bg': 'Purple A100', 'fg': 'Grey 900'}
-let s:light_ui.error         = {'bg': 'Red A700', 'fg': 'Grey 200'}
-let s:light_ui.info          = {'bg': 'Lime A700', 'fg': 'Green 900'}
-let s:light_ui.todo          = {'bg': 'Blue 400', 'fg': s:light_ui.main_bg['bg']}
+let s:light_ui                = {}
+let s:light_ui.base_bg        = {'bg': 'Grey 50'}
+let s:light_ui.main_bg        = {'bg': 'Blue Grey 50'}
+let s:light_ui.main_fg        = {'fg': 'Brown 800'}
+let s:light_ui.hlted          = {'bg': 'Blue Grey 100', 'fg': 'Brown 500'}
+let s:light_ui.hlted_bg       = {'bg': 'Blue Grey 100'}
+let s:light_ui.gutter         = {'fg': 'Brown 300'}
+let s:light_ui.yellow_accent  = {'fg': 'Amber 900'}
+let s:light_ui.green_accent   = {'fg': 'Green 600'}
+let s:light_ui.blue_accent    = {'fg': 'Blue 600'}
+let s:light_ui.red_accent     = {'fg': 'Red 500'}
+let s:light_ui.selection      = {'bg': 'Green 600', 'fg': 'Grey 200'}
+let s:light_ui.alert          = {'bg': 'Amber 500', 'fg': 'Grey 900'}
+let s:light_ui.warn           = {'bg': 'Purple A100', 'fg': 'Grey 900'}
+let s:light_ui.error          = {'bg': 'Red A700', 'fg': 'Grey 200'}
+let s:light_ui.info           = {'bg': 'Lime A700', 'fg': 'Green 900'}
+let s:light_ui.todo           = {'bg': 'Blue 400', 'fg': s:light_ui.main_bg['bg']}
 
 " Syntax related highlighiting
-let s:light_syntax           = {}
-let s:light_syntax.string    = {'fg': 'Indigo 300'}
-let s:light_syntax.comment   = {'fg': 'Brown 300'}
-let s:light_syntax.constant  = {'fg': 'Pink 800'}
-let s:light_syntax.float     = {'fg': 'Light Green 800'}
-let s:light_syntax.func_name = {'fg': 'Red 700'}
-let s:light_syntax.type      = {'fg': 'Blue 500'}
-let s:light_syntax.special   = {'fg': 'Purple 700'}
-let s:light_syntax.statement = {'fg': 'Green 700'}
+let s:light_syntax            = {}
+let s:light_syntax.string     = {'fg': 'Indigo 300'}
+let s:light_syntax.comment    = {'fg': 'Brown 300'}
+let s:light_syntax.constant   = {'fg': 'Pink 800'}
+let s:light_syntax.float      = {'fg': 'Light Green 800'}
+let s:light_syntax.func_name  = {'fg': 'Red 700'}
+let s:light_syntax.type       = {'fg': 'Blue 500'}
+let s:light_syntax.special    = {'fg': 'Purple 700'}
+let s:light_syntax.statement  = {'fg': 'Green 700'}
+let s:light_syntax.inlay_hint = {'fg': 'Lime 800'}
 
 " Git related highlightling
 let s:light_syntax.DiffAdd    = {'bg': 'Light Green 200'}
