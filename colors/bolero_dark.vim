@@ -277,7 +277,7 @@ hi link TagbarType Type
 " # *** DON'T ADD ANYTHING AFTER THIS SECTION ***
 "
 " Update lightline automagically when sourcing this file
-if exists('g:loaded_lightline')
+if exists("g:lightline") && exists('g:loaded_lightline')
 
   let s:path = expand('<sfile>:p:h:h')
 
