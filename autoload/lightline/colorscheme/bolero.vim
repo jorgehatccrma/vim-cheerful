@@ -71,7 +71,7 @@ else
 endif
 
 " Update lightline automagically when sourcing this file
-if exists('g:loaded_lightline')
+if exists("g:lightline") && exists('g:loaded_lightline')
   let g:lightline.colorscheme = 'bolero'
   call lightline#update()
 else
