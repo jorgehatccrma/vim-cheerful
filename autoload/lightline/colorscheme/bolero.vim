@@ -63,7 +63,12 @@ let s:p.replace.left[0] = HLElem(s:cmap.lghtln.replace)
 " # *** DON'T ADD ANYTHING AFTER THIS SECTION ***
 
 " Finally, set the lightline palette
-let g:lightline#colorscheme#bolero#palette = s:p
+if exists("g:lightline")
+	let g:lightline#colorscheme#bolero#palette = s:p
+	echo "Bolero used for lightline"
+else
+	echo "Lightline not found; bolero won't attemt to set itself as its theme"
+endif
 
 " Update lightline automagically when sourcing this file
 if exists('g:loaded_lightline')
